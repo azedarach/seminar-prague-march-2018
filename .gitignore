@@ -1,0 +1,16 @@
+*~
+*.log
+*.aux
+*.nav
+*.out
+*.snm
+*.toc
+*.pdf
+
+figures/*.1
+figures/*.mp
+figures/*.t1
+
+!figures/*.pdf
+figures/SM_gauge_rgflow.pdf
+figures/fermionloop.pdf
