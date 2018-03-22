@@ -1,0 +1,47 @@
+\documentclass{article}
+
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+
+\usepackage{graphicx}
+
+\DeclareGraphicsRule{*}{mps}{*}{}
+\DeclareGraphicsExtensions{.pdf}
+
+\usepackage{amsmath}
+\usepackage{feynmp}
+\usepackage{tabularx}
+
+\pagestyle{empty}
+
+\begin{document}
+
+\newsavebox{\feynmanrules}
+
+\sbox{\feynmanrules}{
+  \begin{fmffile}{./scalarquarticloop}
+    \fmfset{thin}{.8pt}
+
+    \begin{fmfgraph*}(80,80)
+      \fmfkeep{scalarquarticloop}
+      \fmfleft{i}
+      \fmfright{o}
+      \fmf{dashes}{i,v1}
+      \fmf{dashes}{v1,o}
+      \fmffreeze
+      \fmfv{label={\scriptsize $\tilde{f}$}, label.dist=3pt}{t}
+      \fmfforce{(0.5w,0.85h)}{t}
+      \fmf{dashes,left,tension=0.4}{v1,t}
+      \fmf{dashes,left,tension=0.4}{t,v1}
+      \fmfv{label={\scriptsize $h$}, label.dist=3pt}{i}
+      \fmfv{label={\scriptsize $h$}, label.dist=-0.5pt}{o}
+    \end{fmfgraph*}
+
+  \end{fmffile}
+}
+
+\begin{center}
+\fmfreuse{scalarquarticloop}
+\end{center}
+
+\end{document}

@@ -14,3 +14,7 @@ figures/*.t1
 !figures/*.pdf
 figures/SM_gauge_rgflow.pdf
 figures/fermionloop.pdf
+figures/fermionloop2.pdf
+figures/scalarcubicloop.pdf
+figures/scalarquarticloop.pdf
+

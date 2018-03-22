@@ -186,7 +186,7 @@
 
 \begin{frame}
   \frametitle{Constructing SUSY Gauge Theories}
-  \begin{block}{Toy Example: Wess-Zumino Model [1]}
+  \begin{block}{Example: Wess-Zumino Model [1]}
     \begin{equation*}
       \mathcal{L}_{WZ} = \partial^\mu \phi^\dagger \partial_\mu \phi
       + i \bar{\psi} \bar{\sigma}^\mu \partial_\mu \psi + {\color{red}
@@ -435,23 +435,77 @@
   \end{itemize}
 \end{frame}
 
+\begin{frame}
+  \frametitle{Superspace Formulation of the Wess-Zumino Model}
+  \begin{itemize}\itemsep1em
+  \item $\phi$, $\psi$, $F$ $\to$ component fields of single chiral
+    supermultiplet $\Phi$
+  \item Obtain kinetic terms from $D$-term:
+    \begin{equation*}
+      \left [ \Phi^\dagger \Phi \right ]_D = \partial^\mu \phi^\dagger
+      \partial_\mu \phi + i \bar{\psi} \bar{\sigma}^\mu \partial_\mu \psi
+      + F^\dagger F ( + \text{ total derivative})
+    \end{equation*}
+  \item Interaction terms from $F$-term of {\color{blue} superpotential}:
+    \begin{equation*}
+      \left [ W(\Phi) \right ]_F = \left [ L \Phi + \frac{m}{2} \Phi^2
+        + \frac{y}{6} \Phi^3 \right ]_F
+      = -\frac{m}{2} \psi \psi - \frac{y}{2} \phi \psi \psi
+      + (L + m \phi + \frac{y}{2} \phi^2) F
+    \end{equation*}
+    \item Full WZ Lagrangian:
+      \begin{equation*}
+        \mathcal{L}_{WZ} = \left [ \Phi^\dagger \Phi \right ]_D
+        + \left [ W(\Phi) + h.c. \right ]_F
+      \end{equation*}
+    \item Find scalar potential $V = F^\dagger F \geq 0$, eliminate
+      $F$ on-shell using EoM:
+      \begin{equation*}
+        F^\dagger = - \left . \frac{\partial W}{\partial \Phi} \right |_{\theta
+          = \bar{\theta} = 0}
+      \end{equation*}
+  \end{itemize}
+\end{frame}
+
 % summarise standard form of invariant Lagrangian for
 % non-Abelian SUSY gauge theory to which can refer
 % back to
+% - briefly mention also form for non-renormalisable models
+%   relevant for discussion of SUGRA? may not be space
 \begin{frame}
   \frametitle{Recipe for SUSY Models}
   \begin{block}{SUSY Gauge Theory}
-    Given gauge group $G$ and chiral superfields $\Phi^I$ transforming
-    under $G$,
+    Given gauge group $G$, vector supermultiplet $V$, and chiral superfields
+    $\Phi^I$ transforming under $G$,
     \begin{equation*}
       \mathcal{L} = \left [ \Phi^\dagger_I (e^V)^I{}_J \Phi^J \right ]_D
-      + \frac{1}{16 k_i^2 g_i^2} \Tr \left [ \mathcal{W} \mathcal{W}
+      + \frac{1}{16 k^2 g^2} \Tr \left [ \mathcal{W} \mathcal{W}
         + \bar{\mathcal{W}} \bar{\mathcal{W}} \right ]_F
       + \left [ W(\Phi^I) + h.c. \right ]_F
     \end{equation*}
   \end{block}
-  \begin{itemize}
-    \item Given gauge group $G$, chiral superfields
+  \begin{itemize}\itemsep1em
+  \item Gauge field strengths generalised by (note $k = $ Dynkin index)
+    \begin{equation*}
+      \mathcal{W}_\alpha = -\frac{1}{4} \bar{\mathcal{D}} \bar{\mathcal{D}}
+      \left ( e^{-V} \mathcal{D}_\alpha e^V \right ) , \quad
+      \bar{\mathcal{W}}^{\dot{\alpha}} = -\frac{1}{4} \mathcal{D} \mathcal{D}
+      \left ( e^V \bar{\mathcal{D}}^{\dot{\alpha}} e^{-V} \right )
+    \end{equation*}
+  \item Renormalisable, gauge invariant superpotential
+    \begin{equation*}
+      W(\Phi^I) = \frac{1}{6} Y_{IJK} \Phi^I \Phi^J \Phi^K
+      + \frac{1}{2} \mu_{IJ} \Phi^I \Phi^J + L_I \Phi^I
+    \end{equation*}
+  \item Scalar potential
+    \begin{equation*}
+      {\color{blue} V(\phi^I, \phi^\dagger_I) = F^\dagger_I F^I
+        + \frac{1}{2} D^a D^a
+      \geq 0 }, \quad
+      F^I = \left . -\frac{\partial W^\dagger}{\partial \Phi^\dagger_I}
+      \right |_{\theta = \bar{\theta} = 0} , \quad
+      D^a = -g \phi^\dagger_I (T^a)^I{}_J \phi^J
+    \end{equation*}
   \end{itemize}
 \end{frame}
 
@@ -579,41 +633,62 @@
 \begin{frame}
   \frametitle{Example: Gravity-mediated SUSY Breaking}
   \begin{itemize}\itemsep1em
-  \item Hidden sector breaking $\to$ visible sector via
+  \item Hidden sector ($X^I$) breaking $\to$ visible sector ($Z^I$) via
     gravitational strength interactions
-    \begin{itemize}
+    \begin{itemize}\itemsep0.5em
     \item Automatically present for local SUSY/SUGRA
-    \item Breakdown of local SUGRA $\Rightarrow$ massive gravitino
-      via super-Higgs mechanism
+    \item Breakdown of local SUGRA $\Rightarrow$ gravitino
+      acquires mass $m_{3/2}$ via super-Higgs mechanism
     \end{itemize}
-  \item Toy model: visible sector $Z^I$, hidden sector $X^I$, K\"{a}hler
-    potential
+  \item SUGRA: $\Phi^\dagger \Phi \to$ K\"{a}hler potential
+    $K(\Phi, \Phi^\dagger e^V)$, e.g.,
     \begin{equation*}
-      \mathcal{G} = -z^\dagger_I z^I - H(x^I, x^\dagger_I) - M_{Pl}^2 \ln
-      \frac{|W(z^I, x^I)|^2}{M_{Pl}^6}
+      K = Z^\dagger Z + \frac{1}{M_{Pl}} ( X + X^\dagger) Z^\dagger Z
+      + \ldots
     \end{equation*}
-  \item Superpotential $W = W_o(z^I) + W_h(x^I)$ constructed with
-    $\langle F_{X^I} \rangle \neq 0$
-  \item $\Rightarrow$ universal soft terms
-  \item Common alternatives: GMSB, AMSB, $\ldots$
+  \item $\langle F_X \rangle \neq 0$ $\Rightarrow$ soft SUSY breaking
+    interactions in visible sector
+    \begin{equation*}
+      -\mathcal{L}_{\text{soft}} = \frac{|\langle F_X \rangle|^2}{M_{Pl}^2}
+      z^\dagger z + \left ( \frac{\langle F_X \rangle}{M_{Pl}} z \left .
+      \frac{\partial W} {\partial Z} \right |_{\theta = \bar{\theta} = 0}
+      + h.c. \right ) + \ldots
+    \end{equation*}
+  \item Realistic SUGRA models $\Rightarrow$ generate soft interactions
+    \begin{equation*}
+      -\mathcal{L}_{\text{soft}} = m_0^2 \phi^\dagger_I \phi^I + \left (
+      \frac{1}{6} Y_{IJK} A_0 \phi^I \phi^J \phi^K + \frac{1}{2} \mu_{IJ}
+      B_0 \phi^I \phi^J + S_I \phi^I + h.c. \right )
+      + \frac{1}{2} \left ( M_{1/2} \lambda^a \lambda^a + h.c. \right ) ,
+    \end{equation*}
+    i.e., {\color{blue} soft interactions determined by universal $m_0^2$,
+      $A_0$, $B_0$, $M_{1/2}$}, size related to $m_{3/2} \sim \langle F
+    \rangle / M_{Pl}$
   \end{itemize}
 \end{frame}
 
 \begin{frame}
   \frametitle{The Bottom-up Approach}
   \begin{itemize}\itemsep1em
-  \item Detailed mechanism of SSB is unknown
+  \item \alert{Detailed mechanism of SSB is unknown, many alternatives proposed}
+    (gravity mediated, GMSB, AMSB, $\ldots$)
   \item Alternative: break SUSY explicitly using (almost) most general
     set of soft interactions:
     \begin{equation*}
-      -\mathcal{L}_{\text{soft}} \supset (m^2)^i{}_j \phi^*_i \phi^j +
-      \left ( a_{ijk} \phi^i \phi^j \phi^k + b_{ij} \phi^i \phi^j + S_i \phi^i
+      -\mathcal{L}_{\text{soft}} =  (m^2)^I{}_J \phi^\dagger_I \phi^J +
+      \left ( \frac{1}{6} a_{IJK} \phi^I \phi^J \phi^K
+      + \frac{1}{2} b_{IJ} \phi^I \phi^J + S_I \phi^I
       + h.c. \right ) + \frac{1}{2} \left ( M^a \lambda^a \lambda^a + h.c.
       \right )
     \end{equation*}
-  \item Non-exhaustive set: Dirac gaugino masses, trilinear
+  \item \alert{Standard but non-exhaustive set}: also Dirac gaugino masses
+    $m^D_{Ia}\psi^I \lambda^a$,
+    trilinears $r^I{}_{JK} \phi^\dagger_I \phi^J\phi^K$
+  \item {\color{blue} Phenomenologically useful:} cover wide range of SUSY
+    breaking scenarios $\ldots$
+  \item $\ldots$ \alert{at cost of many new parameters}
   \item Note: underlying SSB model $\Rightarrow$ relations among soft
-    breaking parameters
+    breaking parameters (e.g., $(m^2)^I{}_J \to m_0^2 \delta^I_J$)
   \end{itemize}
 \end{frame}
 
@@ -638,6 +713,38 @@
 
 \begin{frame}
   \frametitle{The MSSM: A Schematic View}
+  \vspace{-8pt}
+  \begin{tabularx}{\textwidth}{VVV}
+    \begin{tabular}{c}
+    \includegraphics[width=0.25\textwidth]{susyparticles_sm_cropped} \\
+    \phantom{\tiny Caption}
+  \end{tabular} &
+    \hspace{15pt}
+    \begin{tikzpicture}
+      \path[draw, -latex, thick] (-0.8,0) --node[below]  {\scriptsize (almost)} (0.8,0);
+    \end{tikzpicture} &
+    \begin{tabular}{c}
+      \includegraphics[width=0.5\textwidth]{susyparticles_sm} \\
+      {\tiny [\href{http://www.physics.gla.ac.uk/ppt/bsm.htm}{%
+      http://www.physics.gla.ac.uk/ppt/bsm.htm}] }
+    \end{tabular}
+  \end{tabularx}
+  \vspace*{-50pt}
+  \begin{tabular}{VVV}
+    \includegraphics[width=0.25\textwidth]{fermionloop2} &
+    \hspace{15pt}
+    \begin{tikzpicture}
+      \path[draw, -latex, thick] (-0.8,0) --node {} (0.8,0);
+    \end{tikzpicture} &
+    \begin{equation*}
+      \parbox{20mm}{\includegraphics[width=0.2\textwidth]{fermionloop2}}
+      \quad \quad \quad \, + \quad
+      \parbox{20mm}{\includegraphics[width=0.2\textwidth]{scalarcubicloop} \\
+        \vspace*{-5pt}
+      \includegraphics[width=0.2\textwidth]{scalarquarticloop} }
+    \end{equation*}
+  \end{tabular}
+  \vspace{30pt}
 \end{frame}
 
 \begin{frame}
@@ -676,6 +783,18 @@
 % - improved gauge unification, REWSB
 \begin{frame}
   \frametitle{RG Evolution in the MSSM}
+  \begin{columns}[t]
+    \begin{column}{0.5\textwidth}
+      \begin{itemize}\itemsep1em
+      \item Gauge unification
+      \end{itemize}
+    \end{column}
+    \begin{column}{0.5\textwidth}
+      \begin{itemize}\itemsep1em
+        \item REWSB
+      \end{itemize}
+    \end{column}
+  \end{columns}
 \end{frame}
 
 % - as lead up to non-minimal models, current status?
@@ -997,6 +1116,10 @@
 
 \begin{frame}
   \frametitle{Differentiation for Grassmann Variables}
+\end{frame}
+
+\begin{frame}
+  \frametitle{Component Field Form of SUSY Lagrangian}
 \end{frame}
 
 \end{document}

@@ -1,0 +1,44 @@
+\documentclass{article}
+
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+
+\usepackage{graphicx}
+
+\DeclareGraphicsRule{*}{mps}{*}{}
+\DeclareGraphicsExtensions{.pdf}
+
+\usepackage{amsmath}
+\usepackage{feynmp}
+\usepackage{tabularx}
+
+\pagestyle{empty}
+
+\begin{document}
+
+\newsavebox{\feynmanrules}
+
+\sbox{\feynmanrules}{
+  \begin{fmffile}{./scalarcubicloop}
+    \fmfset{thin}{.8pt}
+
+    \begin{fmfgraph*}(80,80)
+      \fmfkeep{scalarcubicloop}
+      \fmfleft{i}
+      \fmfright{o}
+      \fmf{dashes}{i,v1}
+      \fmf{dashes}{v2,o}
+      \fmf{dashes,left,tension=0.4,label={\scriptsize $\tilde{f}$},label.dist=3pt}{v1,v2}
+      \fmf{dashes,left,tension=0.4}{v2,v1}
+      \fmfv{label={\scriptsize $h$}, label.dist=3pt}{i}
+      \fmfv{label={\scriptsize $h$}, label.dist=-0.5pt}{o}
+    \end{fmfgraph*}
+
+  \end{fmffile}
+}
+
+\begin{center}
+\fmfreuse{scalarcubicloop}
+\end{center}
+
+\end{document}

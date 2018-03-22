@@ -17,12 +17,17 @@ TALK_DIAGS_DIR	:= $(TALK_FIGS_DIR)
 
 TALK_FEYNMP	:= \
 		$(TALK_DIAGS_DIR)/fermionloop.pdf \
+		$(TALK_DIAGS_DIR)/fermionloop2.pdf \
+		$(TALK_DIAGS_DIR)/scalarcubicloop.pdf \
+		$(TALK_DIAGS_DIR)/scalarquarticloop.pdf
 
 TALK_FIGS	:= \
 		$(TALK_FIGS_DIR)/bulletcluster.jpg \
 		$(TALK_FIGS_DIR)/higgs_mass_prl.pdf \
 		$(TALK_FIGS_DIR)/neutrino_masses.pdf \
 		$(TALK_FIGS_DIR)/SM_gauge_rgflow.pdf \
+		$(TALK_FIGS_DIR)/susyparticles_sm.png \
+		$(TALK_FIGS_DIR)/susyparticles_sm_cropped.png \
 		$(TALK_FIGS_DIR)/treelevel_higgs_upperbound_plot.pdf
 
 TALK_EXPORTED := \
