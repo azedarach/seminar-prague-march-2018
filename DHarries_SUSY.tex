@@ -709,11 +709,32 @@
 % - summarise field content
 \begin{frame}
   \frametitle{Requirements on a Realistic SUSY Model}
+  \begin{block}{Aim}
+    Extend SM to be consistent with global SUSY
+  \end{block}
+  \begin{itemize}\itemsep1em
+  \item Embedding into supermultiplets?
+    \begin{itemize}\itemsep0.5em
+    \item SUSY commutes with $G_{SM}$
+    \item $\Rightarrow$ superpartner of, e.g., gluon is colour octet fermion
+    \item Combining, e.g., Higgs, lepton doublet into chiral multiplet
+      excluded
+    \item \alert{SUSY $\Rightarrow$ \emph{new} states in chiral, vector
+      supermultiplets}
+    \end{itemize}
+  \item SM Yukawas $\to$ superpotential interactions
+    \begin{itemize}\itemsep0.5em
+    \item Complication: $W$ depends on $\Phi$ only, not $\Phi^\dagger$,
+      mass terms for fermions?
+    \item Spin-$1/2$ Higgs partners spoil anomaly cancellation
+    \end{itemize}
+  \item Recipe for SUSY gauge theory $\Rightarrow$ {\color{blue} model then
+    characterised by superpotential and soft terms}
+  \end{itemize}
 \end{frame}
 
 \begin{frame}
   \frametitle{The MSSM: A Schematic View}
-  \vspace{-8pt}
   \begin{tabularx}{\textwidth}{VVV}
     \begin{tabular}{c}
     \includegraphics[width=0.25\textwidth]{susyparticles_sm_cropped} \\
@@ -729,7 +750,7 @@
       http://www.physics.gla.ac.uk/ppt/bsm.htm}] }
     \end{tabular}
   \end{tabularx}
-  \vspace*{-50pt}
+  \vspace*{-70pt}
   \begin{tabular}{VVV}
     \includegraphics[width=0.25\textwidth]{fermionloop2} &
     \hspace{15pt}
@@ -744,11 +765,42 @@
       \includegraphics[width=0.2\textwidth]{scalarquarticloop} }
     \end{equation*}
   \end{tabular}
-  \vspace{30pt}
+  \vspace{90pt}
 \end{frame}
 
 \begin{frame}
   \frametitle{MSSM Field Content}
+  \begin{table}[h]
+    \centering
+    \small
+    \begin{tabular}{cccccc}
+      \toprule
+      & $s = 0$ & $s = \frac{1}{2}$ & $SU(3)_C$ & $SU(2)_L$
+      & $\sqrt{\frac{5}{3}} Q_i^Y$ \\
+      \midrule
+      $\hat{Q}_i$ & $\begin{pmatrix} \tilde{u}_{L} \\
+        \tilde{d}_{L} \end{pmatrix}_i$
+      & $\begin{pmatrix} u_{L} \\ d_L\end{pmatrix}_i$
+        & $\mathbf{3}$ & $\mathbf{2}$ & $\frac{1}{6}$ \\[1em]
+        $\hat{u}^c_i$ & $\tilde{u}^*_{iR}$ & $u^c_{iR}$
+        & $\bar{\mathbf{3}}$ & $\mathbf{1}$ & $-\frac{2}{3}$ \\[0.5em]
+        $\hat{d}^c_i$ & $\tilde{d}^*_{iR}$ & $d^c_{iR}$
+        & $\bar{\mathbf{3}}$ & $\mathbf{1}$ & $\frac{1}{3}$ \\[0.5em]
+        $\hat{L}_i$ & $\begin{pmatrix} \tilde{\nu}_{L} \\
+          \tilde{e}_{L} \end{pmatrix}_i$
+        & $\begin{pmatrix} \nu_{L}\\ e_L \end{pmatrix}_i$
+        & $\mathbf{1}$ & $\mathbf{2}$ & $-\frac{1}{2}$ \\[1em]
+        $\hat{e}^c_i$ & $\tilde{e}^*_{iR}$ & $e^c_{iR}$
+        & $\mathbf{1}$ & $\mathbf{1}$ & $1$ \\[0.5em]
+        $\hat{H}_d$ & $\begin{pmatrix} H_d^0 \\ H_d^- \end{pmatrix}$
+        & $\begin{pmatrix} \tilde{H}_d^0 \\ \tilde{H}_d^- \end{pmatrix}$
+        & $\mathbf{1}$ & $\mathbf{2}$ & $-\frac{1}{2}$ \\[1em]
+        $\hat{H}_u$ & $\begin{pmatrix} H_u^+ \\ H_u^0 \end{pmatrix}$
+        & $\begin{pmatrix} \tilde{H}_u^+ \\ \tilde{H}_u^0 \end{pmatrix}$
+        & $\mathbf{1}$ & $\mathbf{2}$ & $\frac{1}{2}$ \\[1em]
+        \bottomrule
+    \end{tabular}
+  \end{table}
 \end{frame}
 
 % - given matter content and symmetries, specification of SUSY
