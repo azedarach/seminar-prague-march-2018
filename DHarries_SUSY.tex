@@ -6,6 +6,7 @@
 
 \usepackage{amsmath,amssymb,mathtools}
 \usepackage{bm}
+\usepackage{cancel}
 \usepackage{empheq}
 \usepackage{graphicx}
 \usepackage{array,booktabs,tabularx,tabulary,multirow}
@@ -21,8 +22,10 @@
 
 \newcommand*\widefbox[1]{\fbox{\hspace{0.5em}#1\hspace{0.5em}}}
 \newcommand{\DRbar}{{\overline{\textrm{DR}}}}
+\newcommand{\SUSYv}{{\cancel{SUSY}}}
 
 \DeclareMathOperator{\Tr}{Tr}
+\DeclareMathOperator{\STr}{STr}
 
 \DeclareGraphicsRule{*}{mps}{*}{}
 \graphicspath{{./figures/}}
@@ -471,19 +474,147 @@
 %      - summarise, i.e., soft scalar masses, trilinears,
 %        gaugino massses
 \begin{frame}
-  \frametitle{Soft SUSY Breaking}
+  \frametitle{(Soft) SUSY Breaking}
+  \begin{columns}[t]
+    \begin{column}{0.5\textwidth}
+      \begin{itemize}\itemsep1em
+      \item {\color{blue} SUSY Lagrangian specified in very elegant and
+        economical fashion} $\ldots$
+      \item $\ldots$ \alert{but empirically low-energy SUSY must be broken}
+      \item $\Rightarrow$ any phenomenologically viable model must include a
+        SUSY breaking sector
+      \item Cancellation of quadratic divergences preserved
+        provided SUSY only {\color{blue} softly broken} [2]
+      \item Generate soft breaking interactions $\Rightarrow$
+        SUSY spontaneously broken?
+      \end{itemize}
+    \end{column}
+    \begin{column}{0.5\textwidth}
+      \begin{center}
+      \begin{tikzpicture}[node distance=2.5cm, auto]
+        \tikzstyle{arrow} = [draw, -latex, thick]
+
+        \node[rectangle, draw, text centered, inner sep = 1em] (high scale)
+             { $Q > M_S$, $\mathcal{L} = \mathcal{L}_{SUSY}$ };
+
+        \node[cloud, draw, cloud puff arc = 90, aspect=4,
+          below of = high scale, inner sep = -1em]
+        (susy breaking) { $Q = M_S$, $SUSY \to \SUSYv\,$?};
+
+        \node[rectangle, draw, text centered, below of = susy breaking,
+        inner sep = 1em]
+        (low scale)
+             { $Q < M_S$,
+               $\mathcal{L} = \tilde{\mathcal{L}}_{SUSY}
+               + \mathcal{L}_{\SUSYv}$ };
+
+        \path[arrow] (high scale) -- node {} (susy breaking);
+        \path[arrow] (susy breaking) -- node {} (low scale);
+      \end{tikzpicture}
+      \end{center}
+    \end{column}
+  \end{columns}
+      {\tiny [2] L.~Girardello and M.~T.~Grisaru,
+        \href{http://dx.doi.org/10.1016/0550-3213(82)90512-0}{%
+          Nucl.~Phys.~B \textbf{194} (1982) 65} }
 \end{frame}
 
 \begin{frame}
   \frametitle{Spontaneous SUSY Breaking}
+  \begin{columns}[t]
+    \begin{column}{0.5\textwidth}
+      \begin{itemize}\itemsep1em
+      \item \alert{Difficult!}
+        \begin{itemize}
+        \item Mass sum rule:
+          \begin{equation*}
+            \STr(m^2) = \sum_{\text{spins } j} (-1)^{2j} (2 j + 1) \Tr(m_j^2)
+            = 0
+          \end{equation*}
+        \item $\Rightarrow$ superpartners of SM fields too light if only
+          available SUSY breaking states
+        \end{itemize}
+      \item Break SUSY in hidden sector, transmit to visible sector via
+        mediator interactions
+      \item Super-Poincar\'{e} algebra $\Rightarrow$ SSB iff $\langle \Omega
+        | H | \Omega \rangle \neq 0$
+      \item $V \sim |F|^2 + |D|^2$ $\Rightarrow$ non-zero hidden sector $F$-
+        (O'Raifeartaigh) or $D$-term (Fayet-Iliopoulos) VEV
+      \end{itemize}
+    \end{column}
+    \begin{column}{0.5\textwidth}
+      \begin{empheq}[box=\widefbox]{equation*}
+        H = P^0 = \frac{1}{2} \left ( \{Q_1, \bar{Q}_{\dot{1}} \}
+        + \{Q_2, \bar{Q}_{\dot{2}} \} \right )
+      \end{empheq}
+      \begin{center}
+        \begin{tikzpicture}[domain=-1.2:0.2]
+          \draw[<->] (-1.5,0) -- (0.8,0) node {};
+          \draw[->] (0,-0.2) -- (0,1.2) node[above] {$V$};
+          \draw[thick] plot (\x, {16 * \x * \x * (\x + 1) * (\x + 1)}) node {};
+          \node[draw = none, text centered] at (0, -0.7) { \small SUSY unbroken };
+        \end{tikzpicture}
+        \begin{tikzpicture}[domain=-1.2:0.2]
+          \draw[<->] (-1.5,0) -- (0.8,0) node {};
+          \draw[->] (0,-0.2) -- (0,1.2) node[above] {$V$};
+          \draw[thick] plot (\x, {16 * \x * \x * (\x + 1) * (\x + 1) + 0.4}) node {};
+          \node[draw = none, text centered] at (0, -0.7) { \small SUSY broken };
+        \end{tikzpicture}\\
+        \vspace*{5pt}
+        \begin{tikzpicture}[domain=-1.2:0.2, samples=50]
+          \draw[<->] (-1.5,0) -- (0.8,0) node {};
+          \draw[->] (0,-0.2) -- (0,1.2) node[above] {$V$};
+          \draw[thick] plot (\x, {16 * \x * \x * (\x + 1) * (\x + 1) - 0.5 * \x})
+          node {};
+          \node[draw = none, text centered] at (0, -0.7)
+               { \small metastable SUSY vacuum };
+        \end{tikzpicture}
+      \end{center}
+    \end{column}
+  \end{columns}
 \end{frame}
 
+% contact with earlier slide on non-renormalisable SUSY Lagrangian
+% => may be better to use toy model in Martin's primer
 \begin{frame}
   \frametitle{Example: Gravity-mediated SUSY Breaking}
+  \begin{itemize}\itemsep1em
+  \item Hidden sector breaking $\to$ visible sector via
+    gravitational strength interactions
+    \begin{itemize}
+    \item Automatically present for local SUSY/SUGRA
+    \item Breakdown of local SUGRA $\Rightarrow$ massive gravitino
+      via super-Higgs mechanism
+    \end{itemize}
+  \item Toy model: visible sector $Z^I$, hidden sector $X^I$, K\"{a}hler
+    potential
+    \begin{equation*}
+      \mathcal{G} = -z^\dagger_I z^I - H(x^I, x^\dagger_I) - M_{Pl}^2 \ln
+      \frac{|W(z^I, x^I)|^2}{M_{Pl}^6}
+    \end{equation*}
+  \item Superpotential $W = W_o(z^I) + W_h(x^I)$ constructed with
+    $\langle F_{X^I} \rangle \neq 0$
+  \item $\Rightarrow$ universal soft terms
+  \item Common alternatives: GMSB, AMSB, $\ldots$
+  \end{itemize}
 \end{frame}
 
 \begin{frame}
   \frametitle{The Bottom-up Approach}
+  \begin{itemize}\itemsep1em
+  \item Detailed mechanism of SSB is unknown
+  \item Alternative: break SUSY explicitly using (almost) most general
+    set of soft interactions:
+    \begin{equation*}
+      -\mathcal{L}_{\text{soft}} \supset (m^2)^i{}_j \phi^*_i \phi^j +
+      \left ( a_{ijk} \phi^i \phi^j \phi^k + b_{ij} \phi^i \phi^j + S_i \phi^i
+      + h.c. \right ) + \frac{1}{2} \left ( M^a \lambda^a \lambda^a + h.c.
+      \right )
+    \end{equation*}
+  \item Non-exhaustive set: Dirac gaugino masses, trilinear
+  \item Note: underlying SSB model $\Rightarrow$ relations among soft
+    breaking parameters
+  \end{itemize}
 \end{frame}
 
 % MSSM
