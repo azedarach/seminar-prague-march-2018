@@ -628,8 +628,6 @@
   \end{columns}
 \end{frame}
 
-% contact with earlier slide on non-renormalisable SUSY Lagrangian
-% => may be better to use toy model in Martin's primer
 \begin{frame}
   \frametitle{Example: Gravity-mediated SUSY Breaking}
   \begin{itemize}\itemsep1em
@@ -778,24 +776,24 @@
       & $s = 0$ & $s = \frac{1}{2}$ & $SU(3)_C$ & $SU(2)_L$
       & $\sqrt{\frac{5}{3}} Q_i^Y$ \\
       \midrule
-      $\hat{Q}_i$ & $\begin{pmatrix} \tilde{u}_{L} \\
+      $Q_i$ & $\begin{pmatrix} \tilde{u}_{L} \\
         \tilde{d}_{L} \end{pmatrix}_i$
       & $\begin{pmatrix} u_{L} \\ d_L\end{pmatrix}_i$
         & $\mathbf{3}$ & $\mathbf{2}$ & $\frac{1}{6}$ \\[1em]
-        $\hat{u}^c_i$ & $\tilde{u}^*_{iR}$ & $u^c_{iR}$
+        $u^c_i$ & $\tilde{u}^*_{iR}$ & $u^c_{iR}$
         & $\bar{\mathbf{3}}$ & $\mathbf{1}$ & $-\frac{2}{3}$ \\[0.5em]
-        $\hat{d}^c_i$ & $\tilde{d}^*_{iR}$ & $d^c_{iR}$
+        $d^c_i$ & $\tilde{d}^*_{iR}$ & $d^c_{iR}$
         & $\bar{\mathbf{3}}$ & $\mathbf{1}$ & $\frac{1}{3}$ \\[0.5em]
-        $\hat{L}_i$ & $\begin{pmatrix} \tilde{\nu}_{L} \\
+        $L_i$ & $\begin{pmatrix} \tilde{\nu}_{L} \\
           \tilde{e}_{L} \end{pmatrix}_i$
         & $\begin{pmatrix} \nu_{L}\\ e_L \end{pmatrix}_i$
         & $\mathbf{1}$ & $\mathbf{2}$ & $-\frac{1}{2}$ \\[1em]
-        $\hat{e}^c_i$ & $\tilde{e}^*_{iR}$ & $e^c_{iR}$
+        $e^c_i$ & $\tilde{e}^*_{iR}$ & $e^c_{iR}$
         & $\mathbf{1}$ & $\mathbf{1}$ & $1$ \\[0.5em]
-        $\hat{H}_d$ & $\begin{pmatrix} H_d^0 \\ H_d^- \end{pmatrix}$
+        $H_d$ & $\begin{pmatrix} H_d^0 \\ H_d^- \end{pmatrix}$
         & $\begin{pmatrix} \tilde{H}_d^0 \\ \tilde{H}_d^- \end{pmatrix}$
         & $\mathbf{1}$ & $\mathbf{2}$ & $-\frac{1}{2}$ \\[1em]
-        $\hat{H}_u$ & $\begin{pmatrix} H_u^+ \\ H_u^0 \end{pmatrix}$
+        $H_u$ & $\begin{pmatrix} H_u^+ \\ H_u^0 \end{pmatrix}$
         & $\begin{pmatrix} \tilde{H}_u^+ \\ \tilde{H}_u^0 \end{pmatrix}$
         & $\mathbf{1}$ & $\mathbf{2}$ & $\frac{1}{2}$ \\[1em]
         \bottomrule
@@ -814,29 +812,99 @@
 %   interactions
 \begin{frame}
   \frametitle{$R$-Parity in the MSSM}
+  \vspace*{-5pt}
+  \begin{block}{General MSSM superpotential}
+    \begin{align*}
+      W_{\text{MSSM}} &= \mu ( H_d \cdot H_u )
+      + y_{ij}^e e^c_i ( L_j \cdot H_d )
+      + y_{ij}^d d^c_i ( Q_j \cdot H_d )
+      + y_{ij}^u u_i^c ( H_u \cdot Q_j ) \\
+      & \quad {} {\color{red} - \epsilon_i L_i \cdot H_u
+      + \frac{1}{2} \rho_{ijk} L_i \cdot L_j e_k^c
+      + \rho^\prime_{ijk} L_i \cdot Q_j d_k^c
+      + \frac{1}{2} \rho^{\prime\prime}_{ijk} u_i^c d_j^c d_k^c }
+    \end{align*}
+  \end{block}
+  \vspace*{-10pt}
+  \begin{columns}[t]
+    \begin{column}{0.5\textwidth}
+      \begin{itemize}
+      \item Most general $W_{\text{MSSM}}$ $\Rightarrow$
+        unacceptable $B$, $L$ violation
+      \item Standard solution: impose {\color{blue} $R$-parity
+        $\equiv$ matter parity}
+        \begin{equation*}
+          Z_2^R = (-1)^{3 (B - L) + 2 s}, \quad
+          Z_2^M = (-1)^{3(B - L)}
+        \end{equation*}
+      \item Originate, e.g., as discrete subgroup of $U(1)_R$
+        \begin{equation*}
+          \theta \to e^{i \alpha \theta} , \quad \bar{\theta} \to
+          e^{-i \alpha} \bar{\theta}
+        \end{equation*}
+        or, e.g., subgroup of gauged $U(1)$ (see later)
+      \end{itemize}
+    \end{column}
+    \begin{column}{0.5\textwidth}
+      \begin{figure}
+        \includegraphics[width=0.5\linewidth]{protondecay}
+      \end{figure}
+    \end{column}
+  \end{columns}
 \end{frame}
 
 % - mention variants of different soft Lagrangian, e.g., pMSSM, CMSSM
 \begin{frame}
   \frametitle{The Constrained MSSM}
+  \vspace*{-10pt}
+  \begin{block}{Standard RPC soft terms}
+    \begin{align*}
+      -\mathcal{L}_{\text{MSSM}}^{\text{soft}} &=
+      m_{Q_{ij}}^2 \tilde{Q}_i^\dagger \tilde{Q}_j + m_{u^c_{ij}}^2
+      (\tilde{u}^c_i)^\dagger \tilde{u}^c_j + m_{d^c_{ij}}^2
+      (\tilde{d}^c_i)^\dagger \tilde{d}^c_j + m_{L_{ij}}^2 \tilde{L}_i^\dagger
+      \tilde{L}_j + m_{e^c_{ij}}^2 (\tilde{e}^c_i)^\dagger \tilde{e}^c_j
+      + m_{H_u}^2 |H_u|^2 + m_{H_d}^2 |H_d|^2 \\
+      & \quad {} + \left ( B\mu H_d \cdot H_u + h.c. \right )
+      +  \left ( T^u_{ij}\tilde{u}_i^c H_{u} \cdot \tilde{Q}_j
+      + T^d_{ij} \tilde{d}_i^c \tilde{Q}_j \cdot H_{d}
+      + T^e_{ij} \tilde{e}_i^c \tilde{L} \cdot H_{d} + h.c. \right ) \\
+      & \quad {}  + \frac{1}{2} \left ( M_1 \tilde{B} \tilde{B}
+      + M_2 \tilde{W} \tilde{W} + M_3 \tilde{G} \tilde{G} + h.c. \right )
+    \end{align*}
+  \end{block}
+  \vspace*{-10pt}
   \begin{columns}[t]
     \begin{column}{0.5\textwidth}
-
+      \begin{columns}[t]
+        \begin{column}{0.5\textwidth}
+          \vspace*{5pt}
+          \begin{figure}
+            \includegraphics[width=\textwidth]{comet_sm_clfv}
+          \end{figure}
+        \end{column}
+        \begin{column}{0.5\textwidth}
+          \begin{figure}
+            \includegraphics[width=0.9\textwidth]{comet_mssm_clfv}
+          \end{figure}
+      \end{column}
+      \end{columns}
+      \begin{center}
+        { \tiny [\href{http://dx.doi.org/10.1093/ptep/pts089}{%
+              COMET collaboration, PTEP \textbf{2013} (2013) 022C01}]
+        }
+      \end{center}
     \end{column}
     \begin{column}{0.5\textwidth}
       \begin{itemize}\itemsep1em
       \item MSSM SUSY sector: {\color{blue} 1 additional complex parameter
         $\mu$}
       \item With general soft terms: \alert{105 new parameters}
-      \item $\Rightarrow$ SUSY flavour problem, new sources of CP-violation,
-        $\ldots$
-      \item Constraints on soft parameters $\Rightarrow$ SSB
-        mechanism?
-      \item E.g., traditional high-scale model is CMSSM,
+      \item SSB mechanism $\Rightarrow$ constraints? E.g., CMSSM:
         \begin{gather*}
           m_Q^2 = m_{u^c}^2 = m_{d^c}^2 = m_L^2 = m_{e^c}^2 = m_0^2 \bm{1} \\
-          m_{H_d}^2 = m_{H_u}^2 = m_0^2 \\
-          A^U = A^D = A^E = A_0 \bm{1} \\
+          m_{H_d}^2 = m_{H_u}^2 = m_0^2, \quad
+          T^{u,d,e} = y^{u,d,e} A_0 \bm{1} \\
           M_1 = M_2 = M_3 = M_{1/2}
         \end{gather*}
       \end{itemize}
@@ -848,11 +916,47 @@
 % - superpartner spectrum
 \begin{frame}
   \frametitle{The Sparticle Spectrum}
-\end{frame}
-
-% - R-parity => natural DM candidate, the neutralino
-\begin{frame}
-  \frametitle{DM in the (RPC) MSSM}
+  \begin{columns}[t]
+    \begin{column}{0.5\textwidth}
+      \begin{figure}
+        \centering
+        \includegraphics[width=0.9\textwidth]{gambit_cmssm_best_fit}
+      \end{figure}
+      \vspace*{-25pt}
+      \begin{center}
+        { \tiny [ \href{http://arxiv.org/abs/1705.07935}{%
+              CMSSM, arXiv:1705.07935}] }
+      \end{center}
+      \begin{itemize}\itemsep1em
+      \item Mass basis $\Rightarrow$ $u$-, $d$-type squarks ($\tilde{u}$,
+        $\tilde{d}$), sleptons ($\tilde{l}$), EW-inos ($\tilde{\chi}^0$,
+        $\tilde{\chi}^\pm$), gluino ($\tilde{g}$)
+      \item {\color{blue} Extended Higgs sector}
+      \end{itemize}
+    \end{column}
+    \begin{column}{0.5\textwidth}
+      \vspace*{-15pt}
+      \begin{itemize}\itemsep1em
+      \item \alert{Spectrum (and $\therefore$ signatures) depends heavily
+        on pattern of soft terms}
+        \begin{itemize}
+        \item Reconstruct soft masses? $\Rightarrow$ ``LHC inverse
+          problem''
+        \end{itemize}
+      \item Some general features: $\tilde{\chi}^0$ LSP (or $\tilde{G}$),
+        $m_{\tilde{g}} > m_{\tilde{\chi}^0}, m_{\tilde{\chi}^\pm}$, $\ldots$
+      \end{itemize}
+      \begin{figure}
+        \centering
+        \includegraphics[width=0.9\textwidth]{gambit_mssm7_best_fit}
+      \end{figure}
+      \vspace*{-25pt}
+      \begin{center}
+        { \tiny [\href{http://arxiv.org/abs/1705.07917}{%
+              MSSM7, arXiv:1705.07917}] }
+      \end{center}
+    \end{column}
+  \end{columns}
 \end{frame}
 
 % - improved gauge unification, REWSB
@@ -860,11 +964,29 @@
   \frametitle{RG Evolution in the MSSM}
   \begin{columns}[t]
     \begin{column}{0.5\textwidth}
+      \begin{figure}
+        \centering
+        \includegraphics[width=0.8\textwidth]{CMSSM_gauge_rgflow}
+      \end{figure}
+      \vspace{-25pt}
+      \begin{center}
+        {\tiny [\href{http://flexiblesusy.hepforge.org/images.html}{%
+              http://flexiblesusy.hepforge.org/images.html}]}
+      \end{center}
       \begin{itemize}\itemsep1em
       \item Gauge unification
       \end{itemize}
     \end{column}
     \begin{column}{0.5\textwidth}
+      \begin{figure}
+        \centering
+        \includegraphics[width=0.8\textwidth]{CMSSM_ewsb_rgflow}
+      \end{figure}
+      \vspace{-25pt}
+      \begin{center}
+        {\tiny [\href{http://flexiblesusy.hepforge.org/images.html}{%
+              http://flexiblesusy.hepforge.org/images.html}]}
+      \end{center}
       \begin{itemize}\itemsep1em
         \item REWSB
       \end{itemize}
@@ -1031,8 +1153,8 @@
     \begin{column}{0.45\textwidth}
       \begin{itemize} \itemsep1em
         \item Well-motivated extensions of MSSM, NMSSM
-        \item $W_{\text{USSM}} \supset \lambda \hat{S} \hat{H}_d
-          \cdot \hat{H}_u$, $Q^\prime_{\hat{S}} \neq 0$ $\Rightarrow$
+        \item $W_{\text{USSM}} \supset \lambda \hat{S} H_d
+          \cdot H_u$, $Q^\prime_{\hat{S}} \neq 0$ $\Rightarrow$
           $\langle S \rangle = s / \sqrt{2}$ also breaks $U(1)^\prime$,
           generating {\color{blue} massive $Z^\prime$}
         \item Consistent model requires anomaly cancellation
@@ -1096,16 +1218,16 @@
             \item allows {\color{blue} $\nu$ masses via see-saw} and
               {\color{blue} successful baryogenesis} [1]
           \end{itemize}
-        \item Extra $\hat{L}_4$, $\hat{\overline{L}}_4$ from incomplete
+        \item Extra $L_4$, $\hat{\overline{L}}_4$ from incomplete
           $\mathbf{27}^\prime$, $\mathbf{\overline{27}}^\prime$ for gauge
           unification
         \item Low-energy matter content from $\mathbf{27}$-plet:
           \begin{align*}
-            &(\hat{Q}_i, \, \hat{u}^c_i, \, \hat{d}^c_i, \, \hat{L}_i, \,
-            \hat{e}^c_i) + (\hat{D}_i, \, \hat{\overline{D}}_i)\\
-            &\quad {} + (\hat{S}_{i}) + (\hat{H}^u_i) + (\hat{H}^d_i)
+            &(Q_i, \, \hat{u}^c_i, \, \hat{d}^c_i, \, L_i, \,
+            e^c_i) + (\hat{D}_i, \, \hat{\overline{D}}_i)\\
+            &\quad {} + (\hat{S}_{i}) + (H^u_i) + (H^d_i)
           \end{align*}
-        \item Higgs doublets $\hat{H}^d_3$, $\hat{H}^u_3$ and one singlet
+        \item Higgs doublets $H^d_3$, $H^u_3$ and one singlet
           $\hat{S}_3$ get VEVs ($\Rightarrow$ EWSB and break $U(1)_N$)
           \vfill
         \end{itemize}
@@ -1119,22 +1241,22 @@
             & $SU(3)_C$ & $SU(2)_L$ & $\sqrt{\frac{5}{3}} Q_i^Y$
             & $\sqrt{40} Q_i^N$ \\
             \midrule
-            $\hat{Q}_i$ & $\mathbf{3}$ & $\mathbf{2}$ & $\frac{1}{6}$ & $1$ \\
+            $Q_i$ & $\mathbf{3}$ & $\mathbf{2}$ & $\frac{1}{6}$ & $1$ \\
             $\hat{u}_i^c$ & $\mathbf{\overline{3}}$ & $\mathbf{1}$
             & $-\frac{2}{3}$ & $1$ \\
             $\hat{d}_i^c$ & $\mathbf{\overline{3}}$ & $\mathbf{1}$
             & $\frac{1}{3}$ & $2$ \\
-            $\hat{L}_i$ & $\mathbf{1}$ & $\mathbf{2}$ & $-\frac{1}{2}$ & $2$ \\
-            $\hat{e}_i^c$ & $\mathbf{1}$ & $\mathbf{1}$ & $1$ & $1$ \\
+            $L_i$ & $\mathbf{1}$ & $\mathbf{2}$ & $-\frac{1}{2}$ & $2$ \\
+            $e_i^c$ & $\mathbf{1}$ & $\mathbf{1}$ & $1$ & $1$ \\
             $\hat{S}_i$ & $\mathbf{1}$ & $\mathbf{1}$ & $0$ & $5$ \\
-            $\hat{H}_i^u$ & $\mathbf{1}$ & $\mathbf{2}$ & $\frac{1}{2}$
+            $H_i^u$ & $\mathbf{1}$ & $\mathbf{2}$ & $\frac{1}{2}$
             & $-2$ \\
-            $\hat{H}_i^d$ & $\mathbf{1}$ & $\mathbf{2}$ & $-\frac{1}{2}$
+            $H_i^d$ & $\mathbf{1}$ & $\mathbf{2}$ & $-\frac{1}{2}$
             & $-3$ \\
             $\hat{D}$ & $\mathbf{3}$ & $\mathbf{1}$ & $-\frac{1}{3}$ & $-2$ \\
             $\hat{\overline{D}}$ & $\mathbf{\overline{3}}$ &  $\mathbf{1}$
             & $\frac{1}{3}$ & $-3$ \\
-            $\hat{L}_4$ & $\mathbf{1}$ & $\mathbf{2}$ & $-\frac{1}{2}$ & $2$ \\
+            $L_4$ & $\mathbf{1}$ & $\mathbf{2}$ & $-\frac{1}{2}$ & $2$ \\
             $\hat{\overline{L}}_4$ & $\mathbf{1}$ & $\mathbf{\overline{2}}$
             & $\frac{1}{2}$ & $-2$ \\
             \bottomrule
@@ -1144,11 +1266,11 @@
     \end{columns}
     \vspace{-4pt}
     \begin{align*}
-      \Aboxed{W_{\text{E}_6\text{SSM}} \approx y_{\tau} \hat{L}_3 \cdot
-        \hat{H}^d_3 \hat{e}^c_3 + y_b \hat{Q}_3 \cdot \hat{H}^d_3 \hat{d}_3^c
-        + y_t \hat{H}^u_3 \cdot \hat{Q}_3 \hat{u}_3^c + \lambda_i \hat{S}_3
-        \hat{H}_i^d \cdot \hat{H}_i^u  + \kappa_i \hat{S}_3 \hat{D}_i
-        \hat{\overline{D}}_i + \mu_L \hat{L}_4 \cdot \hat{\overline{L}}_4}
+      \Aboxed{W_{\text{E}_6\text{SSM}} \approx y_{\tau} L_3 \cdot
+        H^d_3 e^c_3 + y_b Q_3 \cdot H^d_3 \hat{d}_3^c
+        + y_t H^u_3 \cdot Q_3 \hat{u}_3^c + \lambda_i \hat{S}_3
+        H_i^d \cdot H_i^u  + \kappa_i \hat{S}_3 \hat{D}_i
+        \hat{\overline{D}}_i + \mu_L L_4 \cdot \hat{\overline{L}}_4}
     \end{align*}
         {\tiny [1] S.~F.~King, S.~Moretti, and R.~Nevzorov,
           \href{http://dx.doi.org/10.1103/PhysRevD.73.035009}{Phys.~Rev.~D

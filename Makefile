@@ -18,17 +18,27 @@ TALK_DIAGS_DIR	:= $(TALK_FIGS_DIR)
 TALK_FEYNMP	:= \
 		$(TALK_DIAGS_DIR)/fermionloop.pdf \
 		$(TALK_DIAGS_DIR)/fermionloop2.pdf \
+		$(TALK_DIAGS_DIR)/protondecay.pdf \
 		$(TALK_DIAGS_DIR)/scalarcubicloop.pdf \
 		$(TALK_DIAGS_DIR)/scalarquarticloop.pdf
 
 TALK_FIGS	:= \
 		$(TALK_FIGS_DIR)/bulletcluster.jpg \
+		$(TALK_FIGS_DIR)/CMSSM_ewsb_rgflow.pdf \
+		$(TALK_FIGS_DIR)/CMSSM_gauge_rgflow.pdf \
+		$(TALK_FIGS_DIR)/comet_mssm_clfv.jpeg \
+		$(TALK_FIGS_DIR)/comet_sm_clfv.jpeg \
+		$(TALK_FIGS_DIR)/gambit_cmssm_best_fit.pdf \
+		$(TALK_FIGS_DIR)/gambit_mssm7_best_fit.pdf \
 		$(TALK_FIGS_DIR)/higgs_mass_prl.pdf \
 		$(TALK_FIGS_DIR)/neutrino_masses.pdf \
 		$(TALK_FIGS_DIR)/SM_gauge_rgflow.pdf \
+		$(TALK_FIGS_DIR)/supergauge_transformations_quote.pdf \
+		$(TALK_FIGS_DIR)/supergauge_transformations_title.pdf \
 		$(TALK_FIGS_DIR)/susyparticles_sm.png \
 		$(TALK_FIGS_DIR)/susyparticles_sm_cropped.png \
-		$(TALK_FIGS_DIR)/treelevel_higgs_upperbound_plot.pdf
+		$(TALK_FIGS_DIR)/treelevel_higgs_upperbound_plot.pdf \
+		$(TALK_FIGS_DIR)/uk_logo.png
 
 TALK_EXPORTED := \
 		$(TALK_SRC) \
@@ -64,6 +74,7 @@ clean:
 
 distclean: clean
 	-rm -f $(TALK_FIGS_DIR)/SM_gauge_rgflow.pdf
+	-rm -f $(TALK_FIGS_DIR)/CMSSM_ewsb_rgflow.pdf
 	-rm -f $(TALK_FIGS_DIR)/CMSSM_gauge_rgflow.pdf
 	-rm -f $(TALK_FEYNMP)
 	-rm -f $(TALK_PDF)
@@ -78,6 +89,16 @@ $(TALK_FEYNMP): $(TALK_DIAGS_DIR)/%.pdf: $(TALK_DIAGS_DIR)/%.tex
 
 $(TALK_FIGS_DIR)/SM_gauge_rgflow.pdf: $(TALK_FIGS_DIR)/plot_sm_running.py \
 	$(TALK_FIGS_DIR)/SM_rgflow.dat
+	$(PYTHON) $^ --output-file $@
+	$(PDFCROP) $@ $@
+
+$(TALK_FIGS_DIR)/CMSSM_gauge_rgflow.pdf: $(TALK_FIGS_DIR)/plot_cmssm_running.py \
+	$(TALK_FIGS_DIR)/CMSSM_rgflow.dat
+	$(PYTHON) $^ --output-file $@
+	$(PDFCROP) $@ $@
+
+$(TALK_FIGS_DIR)/CMSSM_ewsb_rgflow.pdf: $(TALK_FIGS_DIR)/plot_cmssm_rewsb_running.py \
+	$(TALK_FIGS_DIR)/CMSSM_rgflow.dat
 	$(PYTHON) $^ --output-file $@
 	$(PDFCROP) $@ $@
 

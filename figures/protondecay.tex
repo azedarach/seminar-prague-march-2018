@@ -1,0 +1,45 @@
+\documentclass{article}
+
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+
+\usepackage{graphicx}
+
+\DeclareGraphicsRule{*}{mps}{*}{}
+\DeclareGraphicsExtensions{.pdf}
+
+\usepackage{amsmath}
+\usepackage{feynmp}
+\usepackage{tabularx}
+
+\pagestyle{empty}
+
+\begin{document}
+
+\newsavebox{\feynmanrules}
+
+\sbox{\feynmanrules}{
+  \begin{fmffile}{./protondecay}
+    \fmfset{thin}{.8pt}
+
+    \begin{fmfgraph*}(80,60)
+      \fmfkeep{protondecay}
+      \fmfleft{i1,i2}
+      \fmfright{o1,o2}
+      \fmf{plain,label={\scriptsize $q$}, label.dist=2pt}{i1,v1}
+      \fmf{plain,label={\scriptsize $q$}, label.dist=2pt}{i2,v1}
+      \fmf{dashes, label={\scriptsize $\tilde{q}^\dagger$}, label.dist=1pt}{v1,v2}
+      \fmf{plain,label={\scriptsize $\bar{l}$}, label.dist=2pt}{v2,o1}
+      \fmf{plain,label={\scriptsize $\bar{q}$}, label.dist=2pt}{v2,o2}
+
+      \fmfv{label={\scriptsize $\rho^{\prime \prime}$}}{v1}
+      \fmfv{label={\scriptsize $\rho^{\prime}$}}{v2}
+    \end{fmfgraph*}
+  \end{fmffile}
+}
+
+\begin{center}
+\fmfreuse{protondecay}
+\end{center}
+
+\end{document}
