@@ -23,14 +23,23 @@ TALK_FEYNMP	:= \
 		$(TALK_DIAGS_DIR)/scalarquarticloop.pdf
 
 TALK_FIGS	:= \
+		$(TALK_FIGS_DIR)/ATLAS_SUSY_MSUGRA.pdf \
+		$(TALK_FIGS_DIR)/ATLAS_SUSY_Stop_tLSP.pdf \
+		$(TALK_FIGS_DIR)/ATLAS_SUSY_Summary.pdf \
 		$(TALK_FIGS_DIR)/bulletcluster.jpg \
 		$(TALK_FIGS_DIR)/CMSSM_ewsb_rgflow.pdf \
 		$(TALK_FIGS_DIR)/CMSSM_gauge_rgflow.pdf \
+		$(TALK_FIGS_DIR)/cmssm_mupos1TeV_MGluMSu6_exclusions.png \
 		$(TALK_FIGS_DIR)/comet_mssm_clfv.jpeg \
 		$(TALK_FIGS_DIR)/comet_sm_clfv.jpeg \
+		$(TALK_FIGS_DIR)/contour_de_PhiMuM12.pdf \
 		$(TALK_FIGS_DIR)/gambit_cmssm_best_fit.pdf \
+		$(TALK_FIGS_DIR)/gambit_gut_amu.pdf \
+		$(TALK_FIGS_DIR)/gambit_gut_direct_detection.pdf \
 		$(TALK_FIGS_DIR)/gambit_mssm7_best_fit.pdf \
+		$(TALK_FIGS_DIR)/gambit_mssm7_mchi_mA.pdf \
 		$(TALK_FIGS_DIR)/higgs_mass_prl.pdf \
+		$(TALK_FIGS_DIR)/mastercode_direct_detection.pdf \
 		$(TALK_FIGS_DIR)/neutrino_masses.pdf \
 		$(TALK_FIGS_DIR)/SM_gauge_rgflow.pdf \
 		$(TALK_FIGS_DIR)/supergauge_transformations_quote.pdf \
