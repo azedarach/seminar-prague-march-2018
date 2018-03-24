@@ -191,13 +191,59 @@
 %    SUSY phenomenology)
 \begin{frame}
   \frametitle{The HLS Theorem}
+  \begin{itemize}\itemsep1em
+  \item Non-trivial extension of $\mathcal{P}$ $\Rightarrow$ must
+    relax one or more assumptions of CM theorem
+  \item {\color{blue} CM theorem only holds for commuting generators}
+  \item $\Rightarrow$ non-trivial extension of Poincar\'{e}
+    possible provided consider graded algebras
+    \begin{equation*}
+      \left [ T^a , T^b \right ] = -(-1)^{|T_a||T_b|} \left [
+        T^b, T^a \right ]
+    \end{equation*}
+  \item Haag-{\L}opusz\'{a}nski-Sohnius [2] $\Rightarrow$ odd
+    generators must transform as $(\frac{1}{2}, 0)$, $(0, \frac{1}{2})$
+    under Lorentz group
+  \item Spinorial generators $Q^A_\alpha$, $\overline{Q}^A_{\dot{\alpha}}$
+    $(A = 1, \ldots, N$) generators of SUSY
+  \item $Q^A_\alpha$, $\overline{Q}^A_{\dot{\alpha}}$ satisfy non-trivial
+    commutation relations with $P_\mu$, $M_{\mu\nu}$
+  \item {\color{blue} Under assumptions of HLS, SUSY is unique such
+    extension}
+  \end{itemize}
+  {\tiny }
 \end{frame}
 
 % Super-Poincare algebra
 %  - consequences: superpartners differ
 %    in spin by 1/2, mass degeneracy
 \begin{frame}
-  \frametitle{The Super-Poincar\'{e} Algebra}
+  \frametitle{The ($N = 1$) Super-Poincar\'{e} Algebra}
+  \begin{gather*}
+    \left [ P_\mu , P_\nu \right ] = 0 , \\[0.5em]
+    \left [ M_{\mu\nu}, P_\rho \right ] = i \left ( \eta_{\nu \rho} P_\mu
+    - \eta_{\mu\rho} P_\nu \right ) , \\[0.5em]
+    \left [ M_{\mu\nu}, M_{\rho\sigma} \right ] = -i \left ( \eta_{\mu \rho}
+    M_{\nu\sigma} - \eta_{\mu\sigma} M_{\nu\rho} - \eta_{\nu\rho} M_{\mu\sigma}
+    + \eta_{\nu\sigma} M_{\mu\rho} \right ) ,
+    \left [ Q_\alpha, M_{\mu\nu} \right ] = \left ( \sigma_{\mu\nu}
+    \right )_\alpha{}^\beta Q_\beta , \\[0.5em]
+    \left [ \overline{Q}^{\dot{\alpha}}, M_{\mu\nu} \right ] = \left (
+    \bar{\sigma}_{\mu\nu} \right )^{\dot{\alpha}}{}_{\dot{\beta}}
+    \overline{Q}^{\dot{\beta}} , \\[0.5em]
+    \left [ Q_\alpha, P_\mu \right ] = \left [ \overline{Q}^{\dot{\alpha}},
+      P_\mu \right ] = 0 , \quad
+    \left \{ Q_\alpha , Q_\beta \right \} = \left \{ \overline{Q}^{\dot{\alpha}}
+    , \overline{Q}^{\dot{\beta}} \right \} = 0 , \\[0.5em]
+    \left \{ Q_\alpha, \overline{Q}_{\dot{\beta}} \right \} =
+    2 \left ( \sigma^\mu \right )_{\alpha \dot{\beta}} P_\mu , \\[0.5em]
+    \left \{ \overline{Q}^{\dot{\alpha}} , Q^\beta \right \} =
+    2 \left ( \bar{\sigma}^\mu \right)^{\dot{\alpha}\beta} P_\mu \\[0.5em]
+    \left [ Q_\alpha, R \right ] = Q_\alpha, \quad \left [
+      \overline{Q}_{\dot{\alpha}}, R \right ] = -\overline{Q}_{\dot{\alpha}} ,
+    \quad \left [ P_\mu, R \right ] = \left [ M_{\mu\nu}, R \right ]
+    = 0 \quad (R \Rightarrow U(1)_R \text{ symmetry})
+  \end{gather*}
 \end{frame}
 
 \begin{frame}
