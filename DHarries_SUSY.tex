@@ -205,13 +205,15 @@
     generators must transform as $(\frac{1}{2}, 0)$, $(0, \frac{1}{2})$
     under Lorentz group
   \item Spinorial generators $Q^A_\alpha$, $\overline{Q}^A_{\dot{\alpha}}$
-    $(A = 1, \ldots, N$) generators of SUSY
+    $(A = 1, \ldots, N$) generators of SUSY (focus on $N = 1$)
   \item $Q^A_\alpha$, $\overline{Q}^A_{\dot{\alpha}}$ satisfy non-trivial
     commutation relations with $P_\mu$, $M_{\mu\nu}$
   \item {\color{blue} Under assumptions of HLS, SUSY is unique such
     extension}
   \end{itemize}
-  {\tiny }
+      {\tiny [2] R.~Haag, J.~{\L}opusz\'{a}nski, and M.~Sohnius,
+        \href{http://dx.doi.org/10.1016/0550-3213(75)90279-5}{%
+        Nucl.~Phys.~B \textbf{88} (1975) 257}}
 \end{frame}
 
 % Super-Poincare algebra
@@ -248,6 +250,31 @@
 
 \begin{frame}
   \frametitle{Implications of Global SUSY}
+  \begin{itemize}\itemsep1em
+  \item {\color{blue} $P^2$ remains Casimir of Super-Poincar\'{e} algebra},
+    while $W^2 \to C^2$,
+    \begin{equation*}
+      C_{\mu\nu} = B_\mu P_\nu - B_\nu P_\mu , \quad
+      B_\mu = W_\mu - \frac{1}{4} \overline{Q}_{\dot{\alpha}}
+      \bar{\sigma}_\mu^{\dot{\alpha} \beta} Q_\beta
+    \end{equation*}
+  \item Mass $m$ supermultiplet: $|\Omega \rangle \equiv |m,j,j_3 \rangle$,
+    $Q_1 |\Omega \rangle = Q_2 | \Omega \rangle = 0$ with states
+    \begin{equation*}
+      |\Omega \rangle, \quad a_1^\dagger |\Omega \rangle,
+      \quad a_2^\dagger |\Omega \rangle, \quad
+      \frac{1}{\sqrt{2}} a_1^\dagger a_2^\dagger | \Omega \rangle \quad
+      \left ( a_\alpha = \frac{1}{\sqrt{2 m}} Q_\alpha ,
+      a^\dagger_\alpha = \frac{1}{\sqrt{2 m}} \overline{Q}_{\dot{\alpha}}
+      \right ) ,
+    \end{equation*}
+    having spins $j_3$, $j_3 - \frac{1}{2}$, $j_3 + \frac{1}{2}$, $j_3$
+  \item Massless supermultiplet: states $|\Omega \rangle$, $a^\dagger |\Omega
+    \rangle$, helicities $\lambda$, $\lambda + \frac{1}{2}$
+  \item $\Tr \left [ (-1)^{2S} \{ Q_\alpha, \overline{Q}_{\dot{\beta}} \}
+    \right ] = 0$ $\Rightarrow$ {\color{blue} $n_F = n_B$} (at least for
+    $p^\mu \neq 0$)
+  \end{itemize}
 \end{frame}
 
 % Local SUSY and supergravity
