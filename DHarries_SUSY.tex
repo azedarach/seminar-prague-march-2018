@@ -949,15 +949,6 @@
       http://www.physics.gla.ac.uk/ppt/bsm.htm}] }
     \end{tabular}
   \end{tabularx}
-  \vspace*{-70pt}
-  \begin{tabular}{VVV}
-    \includegraphics[width=0.25\textwidth]{fermionloop2} &
-    \hspace{15pt}
-    \begin{tikzpicture}
-      \path[draw, -latex, thick] (-0.8,0) --node {} (0.8,0);
-    \end{tikzpicture} &
-  \end{tabular}
-  \vspace{90pt}
 \end{frame}
 
 \begin{frame}
@@ -1320,11 +1311,10 @@
 \begin{frame}
   \frametitle{SUSY $\not\equiv$ MSSM}
   \begin{center}
-    The MSSM is \emph{a} realisation of TeV-scale SUSY, {\color{red}
-      not the \emph{unique} such realisation}
+    The MSSM is \emph{a} realisation of TeV-scale SUSY,
+      \alert{not the \emph{unique} such realisation}
   \end{center}
   \begin{itemize}\itemsep1em
-  \item Ultimately, no fundamental reason for low-energy SUSY to be minimal
   \item MSSM shares some limitations of the minimal SM, e.g., $m_{\nu_i} = 0$
   \item SUSY $+$ extensions of SM at high-energies (e.g., RH neutrinos, GUTs)
     $\Rightarrow$ non-minimal SUSY models
@@ -1332,6 +1322,8 @@
     \begin{itemize}
       \item Best resolved in non-minimal models?
     \end{itemize}
+  \item Experimental data $\Rightarrow$ MSSM disfavoured?
+  \item Ultimately, no fundamental reason for low-energy SUSY to be minimal
   \end{itemize}
 \end{frame}
 
@@ -1390,17 +1382,6 @@
   \end{itemize}
 \end{frame}
 
-% - mention shortcoming: give up minimality, what guides model-building?
-% - obviously, non-minimal model must still reproduce SM results
-% - otherwise extreme freedom: new matter fields, new gauge symmetries
-% - guiding principle? E.g., some models can be seen to emerge from
-%   UV complete theories (GUTs, strings, ...)
-% - later can then mention Bayesian naturalness work as means of
-%   discriminating between different models
-\begin{frame}
-  \frametitle{Going Beyond the MSSM}
-\end{frame}
-
 % simple example of non-minimal model doing this: the NMSSM
 % - introduce NMSSM, simplest such extension where add a single
 %   SM singlet superfield
@@ -1408,8 +1389,48 @@
 %   dynamically, improved prospects for e.g. baryogenesis
 \begin{frame}
   \frametitle{Example: The NMSSM}
+  \begin{itemize} \itemsep1em
+  \item First step beyond minimality: add extra chiral superfields
+  \item Simplest non-minimal model: MSSM $+$ SM singlet superfield
+    \vspace{5pt}
+    \begin{figure}
+      \centering
+      \begin{tikzpicture}[node distance=0.5cm, auto]
+        \tikzstyle{arrow} = [draw, -latex, thick]
+
+        \node[rectangle, draw, text centered] (superpotential)
+             { $
+               W_{\text{NMSSM}}^{{\color{red} Z_3}} =
+               W_{\text{MSSM}}^{RPC}|_{\mu = 0} +
+               \lambda \hat{S} \hat{H}_d \cdot \hat{H}_u
+               + \frac{1}{3} \kappa \hat{S}^3
+               $ };
+        \node[rectangle, text centered] (higgs) at (-3,-2)
+             { $m_{h_1}^2 \leq m_Z^2 \cos^2 2\beta {\color{blue}
+                 + \frac{\lambda^2 v^2}{2} \sin^2 2\beta }$ };
+        \node[rectangle, text centered] (mu) at (3,-2)
+             { $\langle S \rangle \neq 0 \Rightarrow {\color{blue}
+                 \mu_{\text{eff.}} = \lambda \langle S \rangle}$ };
+        \path[arrow] (superpotential) -- node {} (higgs);
+        \path[arrow] (superpotential) -- node{} (mu);
+      \end{tikzpicture}
+    \end{figure}
+  \item \alert{Not without complications!}
+    \begin{itemize} \itemsep0.5em
+    \item Tadpole problem?
+    \item Domain walls?
+    \end{itemize}
+  \item Possible to do better? E.g., $\nu$ masses, unification, $\ldots$
+  \end{itemize}
 \end{frame}
 
+% - mention shortcoming: give up minimality, what guides model-building?
+% - obviously, non-minimal model must still reproduce SM results
+% - otherwise extreme freedom: new matter fields, new gauge symmetries
+% - guiding principle? E.g., some models can be seen to emerge from
+%   UV complete theories (GUTs, strings, ...)
+% - later can then mention Bayesian naturalness work as means of
+%   discriminating between different models
 % - no (concrete) evidence for MSSM or NMSSM, why would we consider then
 %   a more complicated model?
 % - can frame in context of Bayesian statistics, given the
@@ -1418,8 +1439,42 @@
 % - incorporates traditional, ad hoc fine tuning arguments
 %   automatically
 \begin{frame}
-  \frametitle{Ockham's Razor}
-  % Numquam ponenda est pluralitas sine necessitate
+  \frametitle{Digression: Guidance for Model Building?}
+  \begin{columns}
+    \begin{column}{0.5\textwidth}
+      \begin{tikzpicture}
+        \node[draw, align = left, fill = white, rounded corners = 6pt,
+          blur shadow = {shadow blur steps = 5}]{%
+          $\ldots$ \emph{if two things, howsoever they are present}\\
+          \emph{according to arrangement and duration, cannot}\\
+          \emph{suffice for the verification of the proposition}\\
+          \emph{while another thing is lacking, then one must}\\
+          \emph{posit that other thing.}\\[0.5em]
+          Chatton
+        };
+      \end{tikzpicture}
+    \end{column}
+    \begin{column}{0.5\textwidth}
+      \begin{tikzpicture}
+        \node[draw, align = left, fill = white, rounded corners = 6pt,
+          blur shadow = {shadow blur steps = 5}]{%
+          \emph{Numquam ponenda est pluralitas sine necessitate}\\[0.5em]
+          \null \hfill Ockham (among others)
+          };
+      \end{tikzpicture}
+    \end{column}
+  \end{columns}
+  \vspace{5pt}
+  \begin{itemize}\itemsep1em
+  \item \alert{No direct evidence for \emph{MSSM}, why continue
+    to (arbitrarily complicated) non-minimal models?}
+  \item Can motivate from more fundamental frameworks
+  \item Naturalness as a guiding principle?
+    \begin{itemize}\itemsep0.5em
+      \item Many different definitions of naturalness
+    \end{itemize}
+  \item {\color{blue} Rigorously compare minimal vs. non-minimal model?}
+  \end{itemize}
 \end{frame}
 
 % further reasons for extending the MSSM
