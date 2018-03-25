@@ -111,11 +111,27 @@
           \end{center}
         \end{column}
         \begin{column}{0.5\textwidth}
+          \vspace*{-30pt}
           \begin{figure}
-            \includegraphics[width=0.9\textwidth]{fermionloop}
+            \centering
+            \includegraphics[width=0.95\textwidth]{sm_vacuum_stability}
           \end{figure}
+          \vspace*{-22pt}
           \begin{center}
-            \alert{i.e., the "Hierarchy Problem"?}
+            {\tiny [\href{http://arxiv.org/abs/1205.6497}{%
+                  arXiv:1205.6497}] }\\
+            Vacuum stability?
+          \end{center}
+          \vspace*{-15pt}
+          \begin{figure}
+            \centering
+            \includegraphics[width=0.6\textwidth]{flavour_anomalies}
+          \end{figure}
+          \vspace*{-28pt}
+          \begin{center}
+            {\tiny [\href{http://arxiv.org/abs/1703.09189}{%
+                  arXiv:1703.09189}]} \\
+            Anomalies?
           \end{center}
         \end{column}
       \end{columns}
@@ -282,6 +298,26 @@
 %  - generalities of supergravity, but not details
 \begin{frame}
   \frametitle{Local SUSY}
+  \begin{itemize} \itemsep1em
+  \item Super-Poincar\'{e} algebra:
+    \begin{equation*}
+      \left \{ Q_\alpha, \overline{Q}_{\dot{\beta}} \right \} =
+      2 \left ( \sigma^\mu \right )_{\alpha \dot{\beta}} P_\mu , \quad
+      \left \{ \overline{Q}^{\dot{\alpha}} , Q^\beta \right \} =
+      2 \left ( \bar{\sigma}^\mu \right)^{\dot{\alpha}\beta} P_\mu
+    \end{equation*}
+    $\Rightarrow$ successive global SUSY transformations $\to$ translation
+  \item Local SUSY $\Rightarrow$ {\color{blue} general coordinate
+    transformations}
+  \item (Off-shell) field content of supergravity multiplet ($n_B = n_F = 12$)
+    \begin{equation*}
+      e^a_\mu , \quad \psi^\alpha_\mu, \quad b_\mu, \quad M
+    \end{equation*}
+  \item $\psi^\alpha_\mu$ corresponds to spin-$3/2$ gravitino (gauge field of
+    local SUSY), $e^a_\mu$ spin-2 graviton
+  \item Construction of theory invariant under local SUSY
+    $\Rightarrow$ {\color{blue} supergravity}
+  \end{itemize}
 \end{frame}
 
 % Hierarchy problem
@@ -299,6 +335,51 @@
 %      corrections
 \begin{frame}
   \frametitle{The Hierarchy Problem}
+  \begin{columns}[t]
+    \begin{column}{0.5\textwidth}
+      \vspace{-15pt}
+      \begin{figure}
+        \includegraphics[width=0.6\textwidth]{fermionloop}
+      \end{figure}
+      \vspace{-15pt}
+      \begin{figure}
+        \centering
+        \includegraphics[width=0.8\textwidth]{%
+          susskind_hierarchy_title}
+      \end{figure}
+      \vspace*{-15pt}
+      \begin{center}
+        \begin{tikzpicture}
+          \node[draw, fill = white, rounded corners = 6pt,
+            blur shadow = {shadow blur steps = 5}]{%
+            \includegraphics[width=0.6\textwidth]{%
+              susskind_hierarchy_quote}
+          };
+        \end{tikzpicture}
+      \end{center}
+    \end{column}
+    \begin{column}{0.5\textwidth}
+      \begin{figure}
+        \centering
+        \includegraphics[width=0.4\textwidth]{scalarcubicloop}
+        \includegraphics[width=0.4\textwidth]{scalarquarticloop}
+      \end{figure}
+      \begin{itemize} \itemsep1em
+      \item {\color{blue} SUSY $\Rightarrow$ scalar masses are protected
+        from large corrections}
+        \begin{itemize}\itemsep0.5em
+        \item Diagrams involving states of opposite
+          statistics cancel
+        \end{itemize}
+      \item ``Natural'' stabilisation of EW scale $\Rightarrow$ (historically)
+        key motivation for SUSY
+      \item Consequence of {\color{blue} SUSY non-renormalisation theorems:}
+        \begin{equation*}
+          \frac{d\mu}{d Q} \propto \mu
+        \end{equation*}
+      \end{itemize}
+    \end{column}
+  \end{columns}
 \end{frame}
 
 % basic SUSY model building
@@ -875,13 +956,6 @@
     \begin{tikzpicture}
       \path[draw, -latex, thick] (-0.8,0) --node {} (0.8,0);
     \end{tikzpicture} &
-    \begin{equation*}
-      \parbox{20mm}{\includegraphics[width=0.2\textwidth]{fermionloop2}}
-      \quad \quad \quad \, + \quad
-      \parbox{20mm}{\includegraphics[width=0.2\textwidth]{scalarcubicloop} \\
-        \vspace*{-5pt}
-      \includegraphics[width=0.2\textwidth]{scalarquarticloop} }
-    \end{equation*}
   \end{tabular}
   \vspace{90pt}
 \end{frame}
@@ -1044,7 +1118,7 @@
       \end{figure}
       \vspace*{-25pt}
       \begin{center}
-        { \tiny [ \href{http://arxiv.org/abs/1705.07935}{%
+        { \tiny [\href{http://arxiv.org/abs/1705.07935}{%
               CMSSM, arXiv:1705.07935}] }
       \end{center}
       \begin{itemize}\itemsep1em

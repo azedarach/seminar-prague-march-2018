@@ -33,6 +33,7 @@ TALK_FIGS	:= \
 		$(TALK_FIGS_DIR)/comet_mssm_clfv.jpeg \
 		$(TALK_FIGS_DIR)/comet_sm_clfv.jpeg \
 		$(TALK_FIGS_DIR)/contour_de_PhiMuM12.pdf \
+		$(TALK_FIGS_DIR)/flavour_anomalies.pdf \
 		$(TALK_FIGS_DIR)/gambit_cmssm_best_fit.pdf \
 		$(TALK_FIGS_DIR)/gambit_gut_amu.pdf \
 		$(TALK_FIGS_DIR)/gambit_gut_direct_detection.pdf \
@@ -42,8 +43,11 @@ TALK_FIGS	:= \
 		$(TALK_FIGS_DIR)/mastercode_direct_detection.pdf \
 		$(TALK_FIGS_DIR)/neutrino_masses.pdf \
 		$(TALK_FIGS_DIR)/SM_gauge_rgflow.pdf \
+		$(TALK_FIGS_DIR)/sm_vacuum_stability.pdf \
 		$(TALK_FIGS_DIR)/supergauge_transformations_quote.pdf \
 		$(TALK_FIGS_DIR)/supergauge_transformations_title.pdf \
+		$(TALK_FIGS_DIR)/susskind_hierarchy_quote.pdf \
+		$(TALK_FIGS_DIR)/susskind_hierarchy_title.pdf \
 		$(TALK_FIGS_DIR)/susyparticles_sm.png \
 		$(TALK_FIGS_DIR)/susyparticles_sm_cropped.png \
 		$(TALK_FIGS_DIR)/treelevel_higgs_upperbound_plot.pdf \
