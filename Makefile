@@ -30,6 +30,9 @@ TALK_FIGS	:= \
 		$(TALK_FIGS_DIR)/CMSSM_ewsb_rgflow.pdf \
 		$(TALK_FIGS_DIR)/CMSSM_gauge_rgflow.pdf \
 		$(TALK_FIGS_DIR)/cmssm_mupos1TeV_MGluMSu6_exclusions.png \
+		$(TALK_FIGS_DIR)/CMSSM_pdf_mz_m0m12.pdf \
+		$(TALK_FIGS_DIR)/CNMSSM_pdf_mz_mh_m0m12.pdf \
+		$(TALK_FIGS_DIR)/CNMSSM_pdf_mz_m0m12.pdf \
 		$(TALK_FIGS_DIR)/comet_mssm_clfv.jpeg \
 		$(TALK_FIGS_DIR)/comet_sm_clfv.jpeg \
 		$(TALK_FIGS_DIR)/contour_de_PhiMuM12.pdf \

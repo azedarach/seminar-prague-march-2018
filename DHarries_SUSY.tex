@@ -18,6 +18,7 @@
 
 \usetikzlibrary{arrows,matrix,shapes,positioning}
 \usetikzlibrary{calc}
+\usetikzlibrary{mindmap}
 \usetikzlibrary{shadows.blur}
 
 \newcommand*\widefbox[1]{\fbox{\hspace{0.5em}#1\hspace{0.5em}}}
@@ -206,7 +207,7 @@
 %    focus on N = 1 SUSY (most relevant for TeV-scale
 %    SUSY phenomenology)
 \begin{frame}
-  \frametitle{The HLS Theorem}
+  \frametitle{The Haag-{\L}opusz\'{a}nski-Sohnius Theorem}
   \begin{itemize}\itemsep1em
   \item Non-trivial extension of $\mathcal{P}$ $\Rightarrow$ must
     relax one or more assumptions of CM theorem
@@ -387,7 +388,7 @@
 
 \begin{frame}
   \frametitle{Constructing SUSY Gauge Theories}
-  \begin{block}{Example: Wess-Zumino Model [1]}
+  \begin{block}{Example: Wess-Zumino Model [3]}
     \begin{equation*}
       \mathcal{L}_{WZ} = \partial^\mu \phi^\dagger \partial_\mu \phi
       + i \bar{\psi} \bar{\sigma}^\mu \partial_\mu \psi + {\color{red}
@@ -417,7 +418,7 @@
     SUSY invariance is manifest}
   \end{itemize}
   \vfill
-      { \tiny [1] J.~Wess and B.~Zumino,
+      { \tiny [3] J.~Wess and B.~Zumino,
         \href{http://dx.doi.org/10.1016/0550-3213(74)90355-1}{%
           Nucl.~Phys.~B \textbf{70} (1974) 39.}}
 \end{frame}
@@ -1024,7 +1025,7 @@
         \end{equation*}
       \item Originate, e.g., as discrete subgroup of $U(1)_R$
         \begin{equation*}
-          \theta \to e^{i \alpha \theta} , \quad \bar{\theta} \to
+          \theta \to e^{i \alpha} \theta , \quad \bar{\theta} \to
           e^{-i \alpha} \bar{\theta}
         \end{equation*}
         or, e.g., subgroup of gauged $U(1)$ (see later)
@@ -1477,6 +1478,61 @@
   \end{itemize}
 \end{frame}
 
+\begin{frame}
+  \frametitle{A Bayesian Approach}
+  \begin{itemize}\itemsep1em
+    \item Rigorous framework {\color{blue} automatically captures intuition
+      about "naturalness"}
+    \item Bayes' theorem applied to model $M$, parameters $\bm{x}$,
+      "observables" $\bm{O}$:
+      \begin{gather*}
+        p(\bm{x}|\text{data},M) = \frac{p(\text{data}|\bm{x},M) p(\bm{x}|M)}
+        {p(\text{data}|M)} , \quad
+        p(M|\text{data}) = \frac{p(\text{data}|M) p(M)}{p(\text{data})} \\
+        {\color{orange} p(\text{data}|M)}
+      = \int d^n x_i\; p(\text{data}|
+        \bm{x},M) p(\bm{x}|M), \quad
+        {\color{green} p_{\text{eff.}}(x_j,\ldots)} = \int dO_i \;
+          p(\bm{O}, \bm{x}^\prime | M, O_i^{\text{exp.}})
+      \end{gather*}
+    \item Reparameterise in favour of $\bm{O}$, e.g.,
+      \begin{equation*}
+        p(\bm{x}|M) = \mathcal{J} p(\bm{O},\bm{x}^\prime|M)
+      \end{equation*}
+      $\Rightarrow$ {\color{orange} evidence} and {\color{green}
+      effective priors} {\color{blue} suppressed by Jacobian} $\Delta_J
+      \sim \mathcal{J}$,
+      \begin{equation*}
+        \Delta_J = \left | \det \frac{\partial \ln O_i}{\partial \ln x_j}
+        \right |
+      \end{equation*}
+ \end{itemize}
+\end{frame}
+
+\begin{frame}
+  \frametitle{CMSSM vs. Constrained NMSSM}
+  \begin{figure}
+    \hspace{-5pt}
+    \includegraphics[width=0.3\textwidth]{CMSSM_pdf_mz_m0m12}
+    \hfill
+    \includegraphics[width=0.3\textwidth]{CNMSSM_pdf_mz_m0m12}
+    \hfill
+    \includegraphics[width=0.3\textwidth]{CNMSSM_pdf_mz_mh_m0m12}
+    \hfill
+  \end{figure}
+  \vspace{-10pt}
+  \begin{center}
+    { \tiny [\href{http://arxiv.org/abs/1709.07895}{%
+          arXiv:1709.07895}] }
+  \end{center}
+  \begin{itemize} \itemsep1em
+  \item Assess plausibility of model, model parameters in light of data
+  \item Bayesian analysis compatible with traditional intuition
+  \item Compute model evidence $\Rightarrow$ {\color{blue} perform full
+    model comparison} to judge benefit of non-minimal model
+  \end{itemize}
+\end{frame}
+
 % further reasons for extending the MSSM
 % - improved gauge unification in the MSSM
 %   => embed in a GUT model at high-energies?
@@ -1490,6 +1546,37 @@
 % - rich phenomenology if exotic states survive to low energies
 \begin{frame}
   \frametitle{Going Further}
+  {\color{blue} Many other directions to explore, many reasons to
+    do so:}
+  \begin{center}
+    \begin{tikzpicture}[small mindmap, grow cyclic, concept color=red!70]
+      \tikzset{concept/.append style={fill={none}}}
+      \node[concept] {Non-minimal models}
+      [clockwise from=30]
+      child[concept] {
+        node[concept] {$R$-parity?}
+        child[concept] { node[concept] {Relax? $\Rightarrow$ RPV-MSSM} }
+        child[concept] { node[concept] {Exact $R$-symmetry?
+            $\Rightarrow$ MRSSM} }
+      }
+      child[concept] {
+        node[concept] {Naturalness?}
+        [clockwise from=-20]
+        child[concept] { node[concept] { NMSSM etc. } }
+      }
+      child[concept] {
+        node[concept] {Unification?}
+        [clockwise from=190]
+        child[concept] { node[concept] {SUSY-GUTs} }
+      }
+      child[concept] {
+        node[concept] {Gravity?}
+        [clockwise from=140]
+        child[concept] { node[concept] {String-inspired models}
+        }
+      };
+    \end{tikzpicture}
+  \end{center}
 \end{frame}
 
 % example: the E6SSM and its variants
@@ -1511,24 +1598,25 @@
   \begin{columns}[t]
     \begin{column}{0.45\textwidth}
       \begin{itemize} \itemsep1em
-        \item Well-motivated extensions of MSSM, NMSSM
-        \item $W_{\text{USSM}} \supset \lambda \hat{S} H_d
+        \item Arise in, e.g., GUT, string constructions
+        \item $W_{\text{USSM}} \supset \lambda S H_d
           \cdot H_u$, $Q^\prime_{\hat{S}} \neq 0$ $\Rightarrow$
-          $\langle S \rangle = s / \sqrt{2}$ also breaks $U(1)^\prime$,
-          generating {\color{blue} massive $Z^\prime$}
+          $\langle S \rangle = s / \sqrt{2}$ breaks $U(1)^\prime$
+          \begin{itemize}
+            \item {\color{blue} model contains massive $Z^\prime$ }
+          \end{itemize}
         \item Consistent model requires anomaly cancellation
           \begin{itemize}
             \item either family non-universal $U(1)^\prime$ charges
               or {\color{blue} extra matter}
           \end{itemize}
-        \item Additional states $\Rightarrow$ exciting phenomenology
       \end{itemize}
     \end{column}
     \begin{column}{0.6\textwidth}
       \vspace{-10pt}
       \begin{figure}
         \centering
-        \includegraphics[width=\textwidth]{treelevel_higgs_upperbound_plot}
+        \includegraphics[width=0.9\textwidth]{treelevel_higgs_upperbound_plot}
       \end{figure}
     \end{column}
   \end{columns}
@@ -1575,7 +1663,7 @@
           under which right-handed neutrinos are uncharged
           \begin{itemize}
             \item allows {\color{blue} $\nu$ masses via see-saw} and
-              {\color{blue} successful baryogenesis} [1]
+              {\color{blue} successful baryogenesis} [4]
           \end{itemize}
         \item Extra $L_4$, $\hat{\overline{L}}_4$ from incomplete
           $\mathbf{27}^\prime$, $\mathbf{\overline{27}}^\prime$ for gauge
@@ -1631,18 +1719,91 @@
         H_i^d \cdot H_i^u  + \kappa_i \hat{S}_3 \hat{D}_i
         \hat{\overline{D}}_i + \mu_L L_4 \cdot \hat{\overline{L}}_4}
     \end{align*}
-        {\tiny [1] S.~F.~King, S.~Moretti, and R.~Nevzorov,
+        {\tiny [4] S.~F.~King, S.~Moretti, and R.~Nevzorov,
           \href{http://dx.doi.org/10.1103/PhysRevD.73.035009}{Phys.~Rev.~D
             \textbf{73}, 035009 (2006)}
           (\href{http://arxiv.org/abs/hep-ph/0510419}{hep-ph/0510419})}
 \end{frame}
 
 \begin{frame}
-  \frametitle{Experimental Signatures of the E$_6$SSM}
+  \frametitle{Limitations of Simple $E_6$ Models}
+  \begin{itemize}\itemsep0.8em
+  \item Most general superpotential
+    \begin{equation*}
+      W \supset {\color{red} g_{ijk}^D} \hat{D}_i \hat{Q}_j \cdot \hat{Q}_k
+      + {\color{red} \tilde{g}_{ijk}^E} \hat{e}_i^c \hat{D}_j \hat{u}_k^c
+      + {\color{orange} y_{ijk}^U} \hat{u}_i^c \hat{H}_{uj} \cdot \hat{Q}_k
+      + {\color{orange} y_{ijk}^D} \hat{d}_i^c \hat{Q}_j \cdot
+      \hat{H}_{dk} + \ldots
+    \end{equation*}
+    $\Rightarrow$ {\color{red} unacceptable $B$, $L$ violation} and
+        {\color{orange} large FCNCs}
+      \item Impose
+        \begin{itemize}
+          \item either exact $Z_2^L$ or exact $Z_2^B$ to forbid
+            $B$, $L$ violating couplings
+          \item approximate $Z_2^H$ to suppress FCNCs
+        \end{itemize}
+    \item Resulting Higgs, singlet couplings
+      \begin{equation*}
+        \lambda_{ijk} \hat{S}_i \hat{H}_{dj} \cdot \hat{H}_{uk}
+        \rightarrow \lambda \hat{S} \hat{H}_{d3} \cdot \hat{H}_{u3}
+        + \lambda_{\alpha\beta} \hat{S} \hat{H}_{d\alpha} \cdot
+        \hat{H}_{u\beta} + \tilde{f}_{\alpha\beta} \hat{S}_\alpha
+        \hat{H}_{d\beta} \cdot \hat{H}_{u3} + f_{\alpha\beta}
+        \hat{S}_\alpha \hat{H}_{d3} \cdot \hat{H}_{u\beta}
+      \end{equation*}
+      $\Rightarrow$ LSP, NSLP is a (ruled out) ``inert'' neutralino
+    \item Simplest viable models impose \emph{another} exact $Z_2^S$
+    \item \alert{None of these $Z_2$ symmetries commute with $E_6$}
+  \end{itemize}
 \end{frame}
 
 \begin{frame}
-  \frametitle{Limitations of Simple $E_6$ Models}
+  \frametitle{Alternative $E_6$ Constructions}
+  \begin{itemize} \itemsep1em
+  \item Alternative $E_6$ models can avoid difficulties of basic
+    E$_6$SSM
+  \item E.g., supplement $\textbf{27}$-plets by components of
+    {\color{orange} extra $\textbf{27}^\prime$-,
+      $\overline{\textbf{27}}^\prime$-plets} [5]:
+    \begin{empheq}[box=\widefbox]{align*}
+      W_{\text{SE}_6\text{SSM}} = {} & \, \lambda {\color{orange} S}
+      ({\color{orange} H_d} \cdot {\color{orange} H_u})
+      - \sigma \phi {\color{orange} S}
+      {\color{orange} \overline{S}}
+      + \frac{\kappa}{3} \phi^3 + \frac{\mu}{2} \phi^2
+      + \Lambda_F \phi + \lambda_{\alpha\beta} {\color{orange} S}
+      ( H^d_{\alpha} \cdot H^u_{\beta}) \\
+      & {} + \kappa_{ij} {\color{orange} S}
+      D_{i} \overline{D}_{j}
+      + \tilde{f}_{i\alpha} S_{i} ({\color{orange} H_u} \cdot
+      H^d_{\alpha}) + f_{i\alpha} S_{i} (H^u_{\alpha}
+      \cdot {\color{orange} H_d})
+      + g^D_{ij} (Q_i \cdot {\color{orange} L_4})
+      \overline{D}_j \\
+      & {} + h^E_{i\alpha} e^c_{i} (H^d_{\alpha} \cdot
+          {\color{orange} L_4})
+          + \mu_L({\color{orange} L_4} \cdot
+          {\color{orange} \overline{L}_4}) + \tilde{\sigma}
+          \phi ({\color{orange} L_4} \cdot
+              {\color{orange} \overline{L}_4})
+              + W^{RPC}_{\text{MSSM}}(\mu=0)
+    \end{empheq}
+  \item Splitting of $E_6$ multiplets achieved in $5D$ or $6D$ orbifold
+    GUT
+  \item {\color{blue} Permits imposition of \emph{single, exact} $\tilde{Z}_2^H$
+    symmetry}
+  \item $U(1)_\psi \times U(1)_\chi \to U(1)_N \times Z_2^M$ at
+    intermediate scale $\Rightarrow$ {\color{blue} conserved $Z_2^M$ emerges
+      automatically}
+  \item Phenomenological implications: two DM candidates, observable
+    exotic states, $\ldots$
+  \end{itemize}
+      {\tiny [5] R.~Nevzorov,
+        \href{http://dx.doi.org/10.1103/PhysRevD.87.015029}
+             {Phys. Rev. \textbf{D} 87, 015029 (2013)}
+             (\href{http://arxiv.org/abs/1205.5967}{arXiv:1205.5967})}
 \end{frame}
 
 \section{Summary}
@@ -1650,6 +1811,40 @@
 \begin{frame}
   \frametitle{Summary}
 
+  \begin{itemize}\itemsep1em
+  \item SUSY is unique extension of Poincar\'{e} symmetry consistent with
+    assumptions of the CM, HLS theorems
+  \item Local SUSY $\Rightarrow$ gravity, giving rise to SUGRA
+  \item SUSY, if present at low-energies, must be broken
+  \item Many different models of SSB, common feature is SUSY breaking in
+    hidden sector transmitted via mediators to visible sector
+  \item Simplest phenomenologically viable model is the MSSM:
+    SM matter fields $\to$ chiral supermultiplets,
+    SM gauge fields $\to$ vector supermultiplets
+  \item MSSM features: improved gauge unification, REWSB, natural DM
+    candidate (assuming $R$-parity)
+  \end{itemize}
+
+\end{frame}
+
+\begin{frame}
+  \frametitle{Summary}
+
+  \begin{itemize}\itemsep1em
+  \item Non-observation of superpartners, shortcomings of MSSM motivate
+    non-minimal SUSY models
+  \item Simplest example is NMSSM, contains additional singlet superfield
+  \item Many different scenarios $\Rightarrow$ many different MSSM extensions
+    \begin{itemize} \itemsep0.5em
+    \item Plausibility of models can be quantified in Bayesian framework
+    \item But theoretical input important in motivating model building
+    \end{itemize}
+  \item Models with extended gauge sectors, e.g., $U(1)$ extensions of the MSSM,
+    arise naturally in many high-scale models
+  \item $E_6$ inspired models are a well-motivated example with
+    rich low-energy phenomenology
+  \end{itemize}
+  \vspace{5pt}
   \begin{center}
     \large Thank you for listening!
   \end{center}
