@@ -501,7 +501,7 @@
   \item Constructed in terms of superfields $\equiv$ functions on superspace,
     e.g.,
     \begin{equation*}
-      \hat{S}(z) = a(x) + \theta \xi(x) + \bar{\theta} \bar{\chi}(x) +
+      S(z) = a(x) + \theta \xi(x) + \bar{\theta} \bar{\chi}(x) +
       \theta \theta b(x) + \bar{\theta} \bar{\theta} c(x) + \bar{\theta}
       \bar{\sigma}^\mu \theta v_\mu (x)
       + \bar{\theta} \bar{\theta} \theta \zeta(x)
@@ -1404,8 +1404,8 @@
              { $
                W_{\text{NMSSM}}^{{\color{red} Z_3}} =
                W_{\text{MSSM}}^{RPC}|_{\mu = 0} +
-               \lambda \hat{S} \hat{H}_d \cdot \hat{H}_u
-               + \frac{1}{3} \kappa \hat{S}^3
+               \lambda S H_d \cdot H_u
+               + \frac{1}{3} \kappa S^3
                $ };
         \node[rectangle, text centered] (higgs) at (-3,-2)
              { $m_{h_1}^2 \leq m_Z^2 \cos^2 2\beta {\color{blue}
@@ -1601,7 +1601,7 @@
       \begin{itemize} \itemsep1em
         \item Arise in, e.g., GUT, string constructions
         \item $W_{\text{USSM}} \supset \lambda S H_d
-          \cdot H_u$, $Q^\prime_{\hat{S}} \neq 0$ $\Rightarrow$
+          \cdot H_u$, $Q^\prime_{S} \neq 0$ $\Rightarrow$
           $\langle S \rangle = s / \sqrt{2}$ breaks $U(1)^\prime$
           \begin{itemize}
             \item {\color{blue} model contains massive $Z^\prime$ }
@@ -1666,17 +1666,17 @@
             \item allows {\color{blue} $\nu$ masses via see-saw} and
               {\color{blue} successful baryogenesis} [4]
           \end{itemize}
-        \item Extra $L_4$, $\hat{\overline{L}}_4$ from incomplete
+        \item Extra $L_4$, $\overline{L}_4$ from incomplete
           $\mathbf{27}^\prime$, $\mathbf{\overline{27}}^\prime$ for gauge
           unification
         \item Low-energy matter content from $\mathbf{27}$-plet:
           \begin{align*}
-            &(Q_i, \, \hat{u}^c_i, \, \hat{d}^c_i, \, L_i, \,
-            e^c_i) + (\hat{D}_i, \, \hat{\overline{D}}_i)\\
-            &\quad {} + (\hat{S}_{i}) + (H^u_i) + (H^d_i)
+            &(Q_i, \, u^c_i, \, d^c_i, \, L_i, \,
+            e^c_i) + (D_i, \, \overline{D}_i)\\
+            &\quad {} + (S_{i}) + (H^u_i) + (H^d_i)
           \end{align*}
         \item Higgs doublets $H^d_3$, $H^u_3$ and one singlet
-          $\hat{S}_3$ get VEVs ($\Rightarrow$ EWSB and break $U(1)_N$)
+          $S_3$ get VEVs ($\Rightarrow$ EWSB and break $U(1)_N$)
           \vfill
         \end{itemize}
       \end{column}
@@ -1690,22 +1690,22 @@
             & $\sqrt{40} Q_i^N$ \\
             \midrule
             $Q_i$ & $\mathbf{3}$ & $\mathbf{2}$ & $\frac{1}{6}$ & $1$ \\
-            $\hat{u}_i^c$ & $\mathbf{\overline{3}}$ & $\mathbf{1}$
+            $u_i^c$ & $\mathbf{\overline{3}}$ & $\mathbf{1}$
             & $-\frac{2}{3}$ & $1$ \\
-            $\hat{d}_i^c$ & $\mathbf{\overline{3}}$ & $\mathbf{1}$
+            $d_i^c$ & $\mathbf{\overline{3}}$ & $\mathbf{1}$
             & $\frac{1}{3}$ & $2$ \\
             $L_i$ & $\mathbf{1}$ & $\mathbf{2}$ & $-\frac{1}{2}$ & $2$ \\
             $e_i^c$ & $\mathbf{1}$ & $\mathbf{1}$ & $1$ & $1$ \\
-            $\hat{S}_i$ & $\mathbf{1}$ & $\mathbf{1}$ & $0$ & $5$ \\
+            $S_i$ & $\mathbf{1}$ & $\mathbf{1}$ & $0$ & $5$ \\
             $H_i^u$ & $\mathbf{1}$ & $\mathbf{2}$ & $\frac{1}{2}$
             & $-2$ \\
             $H_i^d$ & $\mathbf{1}$ & $\mathbf{2}$ & $-\frac{1}{2}$
             & $-3$ \\
-            $\hat{D}$ & $\mathbf{3}$ & $\mathbf{1}$ & $-\frac{1}{3}$ & $-2$ \\
-            $\hat{\overline{D}}$ & $\mathbf{\overline{3}}$ &  $\mathbf{1}$
+            $D$ & $\mathbf{3}$ & $\mathbf{1}$ & $-\frac{1}{3}$ & $-2$ \\
+            $\overline{D}$ & $\mathbf{\overline{3}}$ &  $\mathbf{1}$
             & $\frac{1}{3}$ & $-3$ \\
             $L_4$ & $\mathbf{1}$ & $\mathbf{2}$ & $-\frac{1}{2}$ & $2$ \\
-            $\hat{\overline{L}}_4$ & $\mathbf{1}$ & $\mathbf{\overline{2}}$
+            $\overline{L}_4$ & $\mathbf{1}$ & $\mathbf{\overline{2}}$
             & $\frac{1}{2}$ & $-2$ \\
             \bottomrule
           \end{tabular}
@@ -1715,10 +1715,10 @@
     \vspace{-4pt}
     \begin{align*}
       \Aboxed{W_{\text{E}_6\text{SSM}} \approx y_{\tau} L_3 \cdot
-        H^d_3 e^c_3 + y_b Q_3 \cdot H^d_3 \hat{d}_3^c
-        + y_t H^u_3 \cdot Q_3 \hat{u}_3^c + \lambda_i \hat{S}_3
-        H_i^d \cdot H_i^u  + \kappa_i \hat{S}_3 \hat{D}_i
-        \hat{\overline{D}}_i + \mu_L L_4 \cdot \hat{\overline{L}}_4}
+        H^d_3 e^c_3 + y_b Q_3 \cdot H^d_3 d_3^c
+        + y_t H^u_3 \cdot Q_3 u_3^c + \lambda_i S_3
+        H_i^d \cdot H_i^u  + \kappa_i S_3 D_i
+        \overline{D}_i + \mu_L L_4 \cdot \overline{L}_4}
     \end{align*}
         {\tiny [4] S.~F.~King, S.~Moretti, and R.~Nevzorov,
           \href{http://dx.doi.org/10.1103/PhysRevD.73.035009}{Phys.~Rev.~D
@@ -1731,11 +1731,11 @@
   \begin{itemize}\itemsep0.8em
   \item Most general superpotential
     \begin{equation*}
-      W \supset {\color{red} g_{ijk}^D} \hat{D}_i \hat{Q}_j \cdot \hat{Q}_k
-      + {\color{red} \tilde{g}_{ijk}^E} \hat{e}_i^c \hat{D}_j \hat{u}_k^c
-      + {\color{orange} y_{ijk}^U} \hat{u}_i^c \hat{H}_{uj} \cdot \hat{Q}_k
-      + {\color{orange} y_{ijk}^D} \hat{d}_i^c \hat{Q}_j \cdot
-      \hat{H}_{dk} + \ldots
+      W \supset {\color{red} g_{ijk}^D} D_i Q_j \cdot Q_k
+      + {\color{red} \tilde{g}_{ijk}^E} e_i^c D_j u_k^c
+      + {\color{orange} y_{ijk}^U} u_i^c H_{uj} \cdot Q_k
+      + {\color{orange} y_{ijk}^D} d_i^c Q_j \cdot
+      H_{dk} + \ldots
     \end{equation*}
     $\Rightarrow$ {\color{red} unacceptable $B$, $L$ violation} and
         {\color{orange} large FCNCs}
@@ -1747,12 +1747,12 @@
         \end{itemize}
     \item Resulting Higgs, singlet couplings
       \begin{equation*}
-        \lambda_{ijk} \hat{S}_i \hat{H}_{dj} \cdot \hat{H}_{uk}
-        \rightarrow \lambda \hat{S} \hat{H}_{d3} \cdot \hat{H}_{u3}
-        + \lambda_{\alpha\beta} \hat{S} \hat{H}_{d\alpha} \cdot
-        \hat{H}_{u\beta} + \tilde{f}_{\alpha\beta} \hat{S}_\alpha
-        \hat{H}_{d\beta} \cdot \hat{H}_{u3} + f_{\alpha\beta}
-        \hat{S}_\alpha \hat{H}_{d3} \cdot \hat{H}_{u\beta}
+        \lambda_{ijk} S_i H_{dj} \cdot H_{uk}
+        \rightarrow \lambda S H_{d3} \cdot H_{u3}
+        + \lambda_{\alpha\beta} S H_{d\alpha} \cdot
+        H_{u\beta} + \tilde{f}_{\alpha\beta} S_\alpha
+        H_{d\beta} \cdot H_{u3} + f_{\alpha\beta}
+        S_\alpha H_{d3} \cdot H_{u\beta}
       \end{equation*}
       $\Rightarrow$ LSP, NSLP is a (ruled out) ``inert'' neutralino
     \item Simplest viable models impose \emph{another} exact $Z_2^S$
