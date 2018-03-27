@@ -1868,10 +1868,72 @@
 
 \begin{frame}
   \frametitle{Differentiation for Grassmann Variables}
+  \begin{itemize} \itemsep1em
+  \item Differentiation of superspace coordinates defined according to
+  \begin{subequations}
+    \begin{align*}
+      \frac{\partial \theta^\beta}{\partial \theta^\alpha}&=\delta^\beta_\alpha,
+      &
+      \frac{\partial \bar{\theta}_{\dot{\beta}}}{\partial \theta^\alpha}&=0,\\
+      \frac{\partial \bar{\theta}_{\dot{\beta}}}{\partial
+        \bar{\theta}_{\dot{\alpha}}}
+      &= \delta^{\dot{\alpha}}_{\dot{\beta}},
+      &
+      \frac{\partial \theta^\beta}{\partial \bar{\theta}_{\dot{\alpha}}} &=0, \\
+      \frac{\partial \theta_\beta}{\partial \theta^\alpha}
+      &=\epsilon_{\alpha\beta}, &
+      \frac{\partial \bar{\theta}_{\dot{\beta}}}{\partial
+        \bar{\theta}_{\dot{\alpha}}}&=-\epsilon_{\dot{\alpha}\dot{\beta}}.
+    \end{align*}
+  \end{subequations}
+  \item Partial derivatives with respect to anticommuting coordinates
+    anti-commute,
+    \begin{equation*}
+      \left \{ \frac{\partial }{\partial \theta^\alpha},
+      \frac{\partial}{\partial \theta^\beta}\right \}=
+      \left \{ \frac{\partial }{\partial \bar{\theta}^{\dot{\alpha}}},
+      \frac{\partial}{\partial \bar{\theta}^{\dot{\beta}}}\right \}
+      =\left \{ \frac{\partial }{\partial \theta^\alpha},
+      \frac{\partial}{\partial \bar{\theta}^{\dot{\beta}}}\right \}=0.
+    \end{equation*}
+  \item Leibniz rule for anticommuting $\psi$, $\xi$:
+    \begin{equation*}
+      \partial(\psi \xi) = (\partial \psi) \xi - \psi (\partial \xi)
+    \end{equation*}
+  \end{itemize}
 \end{frame}
 
 \begin{frame}
   \frametitle{Component Field Form of SUSY Lagrangian}
+  \begin{itemize}\itemsep1em
+    \item Chiral superfield kinetic terms $\Rightarrow$ matter kinetic terms:
+      \begin{equation*}
+        \left [ \hat{\Phi}^{\dagger}_I (e^{\hat{V}})^I{}_J
+          \hat{\Phi}^J \right ]_D
+        = (\nabla^\mu \phi)^{\dagger}_I(\nabla_\mu \phi)^I + i \bar{\psi}_I
+        \bar{\sigma}^\mu (\nabla_\mu \psi)^I - \sqrt{2} g \left [
+          \bar{\lambda}^a
+          \bar{\psi}_I (T^a)^I{}_J \phi^J + h.c. \right ]
+        + F^{\dagger}_I F^I + g D^a \phi^{\dagger}_I (T^a)^I{}_J
+        \phi^J
+      \end{equation*}
+    \item Gauge boson and gaugino kinetic terms contained in
+      \begin{equation*}
+        \frac{1}{16 k^2 g^2} \Tr \left [
+          \mathcal{W} \mathcal{W} + \overline{\mathcal{W}}
+          \overline{\mathcal{W}}
+          \right ]_F
+        = i\bar{\lambda}^a \bar{\sigma}^\mu (\nabla_\mu \lambda)^a - \frac{1}{4}
+        F^a_{\mu\nu} F^{a\mu\nu} + \frac{1}{2}D^a D^a
+      \end{equation*}
+    \item Chiral supermultiplet interactions contained in
+      \begin{equation*}
+        \left [ W(\Phi^I) + h.c. \right ]_F = -\frac{1}{2}
+        \psi^I \psi^J \left . \frac{\partial^2 W}
+            {\partial \Phi^I \partial \Phi^J} \right |_{\theta = \bar{\theta}
+              = 0} + \frac{\partial W}{\partial \Phi^I} F^I + h.c.
+      \end{equation*}
+  \end{itemize}
 \end{frame}
 
 \end{document}
